@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empower Local People</title>
+    <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="css/stylec619.css?v=1.0" rel="stylesheet" type="text/css" />
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+
+
+
+
+/* Rest of the CSS styles */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.donate-button {
+    background-color: #e75b1e;
+    transition: all 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: #d44d12;
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: #e75b1e;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d44d12;
+}
+
+.impact-card {
+    background: white;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile menu button styles */
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 60;
+    }
+
+    .mobile-menu-line {
+        width: 25px;
+        height: 3px;
+        background-color: #e75b1e;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links button {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}
+
+/* Responsive text sizing for organization name */
+@media (max-width: 768px) {
+    .flex.items-center span.ml-4 {
+        font-size: 1rem; /* Smaller font size for mobile */
+        margin-left: 0.5rem; /* Less margin on mobile */
+        line-height: 1.2; /* Tighter line height */
+    }
+    
+    /* Logo size adjustment */
+    .flex.items-center img {
+        height: 2rem; /* Smaller logo on mobile */
+    }
+    
+    /* Hero section text adjustments */
+    .hero-content h1 {
+        font-size: 2.5rem !important; /* Smaller main heading */
+        margin-bottom: 0.5rem;
+    }
+    
+    #typing-text {
+        font-size: 2rem !important; /* Smaller animated text */
+    }
+    
+    /* Adjust vertical spacing */
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    /* Banner height adjustment for mobile */
+    .banner {
+        height: 60vh; /* Adjust banner height for mobile */
+        padding-top: 4rem; /* Account for fixed header */
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+    
+    #typing-text {
+        font-size: 1.75rem !important;
+    }
+}
+
+
+            .hero-section {
+                position: relative;
+                height: 80vh;
+                overflow: hidden;
+            }
+    
+    
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+    
+            .stat-card {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+    
+            .stat-card:hover {
+                transform: translateY(-5px);
+            }
+    
+            .donate-button {
+                background-color: #e75b1e;
+                transition: all 0.3s ease;
+            }
+    
+            .donate-button:hover {
+                background-color: #d44d12;
+                transform: scale(1.05);
+            }
+    
+            .nav-link {
+                color: #e75b1e;
+                transition: color 0.3s ease;
+            }
+    
+            .nav-link:hover {
+                color: #d44d12;
+            }
+    
+            .impact-card {
+                background: white;
+                border-radius: 12px;
+                transition: transform 0.3s ease;
+            }
+    
+            .impact-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+    
+            .support-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/support-bg.jpg');
+                background-size: cover;
+                position: relative;
+                background-position: center;
+            }
+  
+
+
+</style>
+
+<!-- Add this HTML right before your desktop navigation div -->
+
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="images/empower locals logo orange ico.png" alt="Logo" class="h-12">
+                    <span class="ml-4 text-xl font-semibold text-gray-800">Empowerment for Local People Foundation</span>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="mobile-menu md:hidden">
+                    <div class="mobile-menu-line"></div>
+                    <div class="mobile-menu-line"></div>
+                    <div class="mobile-menu-line"></div>
+                </div>
+    
+                <!-- Navigation Menu (Desktop & Mobile) -->
+                <div class="nav-links hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+           
+                    <a href="#work" class="nav-link">Our Work</a>
+                    <a href="/about.html" class="nav-link">About Us</a>
+                    <a href="/empowerfarmers.html" class="nav-link">EmpowerFarmers</a>
+                    <a href="/team.html" class="nav-link">Team</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="donate-button text-white px-6 py-2 rounded-full font-semibold">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="banner background-image flex items-center justify-center text-white h-screen bg-cover bg-center">
+    <div class="hero-content text-center flex flex-col items-center justify-center">
+        <h1 class="text-8xl font-bold mb-6">Building a</h1>
+        <div class="typing-container">
+            <span id="typing-text" class="red-text text-6xl font-bold"></span>
+        </div>
+        <h1 class="text-8xl font-bold mt-4">Local Economy</h1>
+    </div>
+</section>
+
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
+          
+            <div class="stat-card p-6 text-center">
+                <p class="text-4xl red-text font-bold text-orange-500"><span class="counter" data-target="8000">0</span>+</p>
+                <p class="text-gray-600">businesses trained</p>
+            </div>
+            <div class="stat-card p-6 text-center">
+                <p class="text-4xl red-text font-bold text-orange-500"><span class="counter" data-target="11">0</span></p>
+                <p class="text-gray-600">farmers supported</p>
+            </div>
+            <div class="stat-card p-6 text-center">
+                <p class="text-4xl  red-text font-bold text-orange-500"><span class="counter" data-target="1">0</span></p>
+                <p class="text-gray-600">AI-powered Whatsapp Bot</p>
+            </div>
+            <div class="stat-card p-6 text-center">
+                <p class="text-4xl red-text font-bold text-orange-500"><span class="counter" data-target="200">0</span>+</p>
+                <p class="text-gray-600">markets reached</p>
+            </div>
+            <div class="stat-card p-6 text-center">
+                <p class="text-4xl red-text font-bold text-orange-500"><span class="counter" data-target="98">0</span></p>
+                <p class="text-gray-600">pages of small business handbook</p>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Work Section -->
+    <section id="work" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/image1.jpg" alt="E-bookkeeping" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Digital Adoption Research</h3>
+                        <p class="text-gray-600 red-text">Randomized control trials measuring impact of digital record keeping on small firms</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/image2.jpg" alt="Technical Assistance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2"> AI Mentoring + Technical Assistance  </h3>
+                        <p class="text-gray-600 red-text">AI-enabled WhatsApp mentoring and in-person coaching programs for SMEs</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <a href="/empowerfarmers.html" class="block">
+                        <img src="images/empowerwomen1.jpeg" alt="EmpowerFarmers" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold mb-2">EmpowerFarmers</h3>
+                            <p class="text-gray-600 red-text">Supporting smallholder farmers with financing and training</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <a href="https://www.linkedin.com/posts/empoweringlocals_smallbusiness-training-innovation-activity-7241841545207812097-hJ1j?utm_source=share&utm_medium=member_desktop
+                    " class="block">
+                    <img src="/images/lsetf2.jpeg" alt="Measuring Learning Outcomes for Financial Inclusion" class="w-full h-48 object-cover">
+                   
+                   
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Measuring Learning Outcomes for Financial Inclusion</h3>
+                        <p class="text-gray-600 red-text">Collaborating with Lagos State Employment Trust Fund</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+     <!-- Impact Areas Section -->
+     <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">What Success Means</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="impact-card p-8">
+                    <h3 class="text-2xl font-bold red-text mb-4"> Creating Wealth</h3>
+                    <p class="text-gray-600 mb-4">We measure the household wealth increase, revenue growth, profit increase, expenses reduction, better product pricing, and employee expansion of small businesses.</p>
+                    <!-- <a href="#" class="text-orange-500 hover:text-orange-600">Learn more →</a> -->
+                </div>
+                <div class="impact-card p-8">
+                    <h3 class="text-2xl font-bold red-text  mb-4">Right Knowledge and Technology</h3>
+                    <p class="text-gray-600 mb-4">We measure the number of standardized assessments, new online resources, and articles created for small businesses. We also measure the proportion of these knowledge possessed by firm owners.</p>
+                    <!-- <a href="#" class="text-orange-500 hover:text-orange-600">Learn more →</a> -->
+                </div>
+                <div class="impact-card p-8">
+                    <h3 class="text-2xl font-bold red-text mb-4">Eliminating Inefficiency</h3>
+                    <p class="text-gray-600 mb-4">We measure the level of adherence to new technology and compliance with regulatory requirements to ensure that businesses operate more efficiently.</p>
+                    <!-- <a href="#" class="text-orange-500 hover:text-orange-600">Learn more →</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Support Section -->
+<section class="support-section py-20 bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-white mb-4">Donate to our mission</h3>
+                <p class="text-white mb-6">Your investment allows us to support marginalized women and small firms in remote communities.</p>
+                <a href="/donate.html" class="donate-button px-6 py-2 rounded-full font-semibold bg-orange-500 hover:bg-orange-600 text-white">Donate Now</a>
+            </div>
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-white mb-4">Career</h3>
+                <p class="text-white mb-6">We are constantly seeking talent interested in magnifying the voices of the unheard.</p>
+                <a href="/joinus.html" class="donate-button px-6 py-2 rounded-full font-semibold bg-orange-500 hover:bg-orange-600 text-white">Join Us</a>
+            </div>
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-white mb-4">Suggest Beneficiaries</h3>
+                <p class="text-white mb-6">Know any remote small business that may need upskilling or technology to scale?</p>
+                <a href="/suggest.html" class="donate-button px-6 py-2 rounded-full font-semibold bg-orange-500 hover:bg-orange-600 text-white">Suggest Today</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+      
+
+ 
+     
+
+
+    <script>
+        // Typing Animation
+        const texts = ['Sustainable', 'Inclusive', 'Prosperous'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 1000;
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            const typingElement = document.getElementById('typing-text');
+
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(typeText, pauseTime);
+                return;
+            }
+
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(typeText, typingSpeed);
+                return;
+            }
+
+            setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
+        }
+
+        // Counter Animation
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Initialize animations when elements are visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('counter')) {
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        animateValue(entry.target, 0, target, 2000);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Start typing animation
+        document.addEventListener('DOMContentLoaded', () => {
+            typeText();
+            document.querySelectorAll('.counter').forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navLinks.classList.toggle('show');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+            navLinks.classList.remove('show');
+        }
+    });
+
+    // Prevent menu from closing when clicking inside it
+    navLinks.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+
+    </script>
+</body>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p>41 CMD Road, Magodo Phase 2</p>
+                    <p>Lagos State, Nigeria</p>
+                    <p><a href="mailto:info@empowerlocals.org">info@empowerlocals.org</a></p>
+                    <p>+234 913 477 4276</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <input type="email" placeholder="Enter your email" class="w-full p-2 rounded bg-gray-700 border border-gray-600">
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="social-media-icons">
+                          
+        <a href="https://twitter.com/empowerlocals" target="_blank" class="social-icon">
+            <img src="images/logo-white.png" alt="Twitter" />
+        </a>
+        <a href="https://www.instagram.com/empowerlocals" target="_blank" class="social-icon">
+            <img src="images/Instagram_Glyph_Gradient.png" alt="Instagram" />
+        </a>
+        <a href="https://www.linkedin.com/company/empoweringlocals/?viewAsMember=true" target="_blank" class="social-icon">
+            <img src="images/In-Blue-72-┬«@2x.png" alt="LinkedIn" />
+        </a>
+        <a href="https://www.facebook.com/empowerlocals" target="_blank" class="social-icon">
+            <img src="images/Facebook_Logo_Primary.png" alt="Facebook" />
+        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-400">
+                <p>&copy; 2024 Empowerment for Local People Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

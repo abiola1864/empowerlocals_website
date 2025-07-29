@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Link Generator from Google Sheets</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; text-align: center; }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .btn {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        #generateButton {
+            background-color: #eb5d20;
+        }
+        #generateButton:hover {
+            background-color: #d04d1a;
+        }
+        #downloadAllButton {
+            background-color: #4CAF50;
+        }
+        #downloadAllButton:hover {
+            background-color: #45a049;
+        }
+        #linkList {
+            margin-top: 20px;
+            text-align: left;
+        }
+        #linkList a {
+            display: block;
+            margin-bottom: 10px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        #linkList a:hover {
+            text-decoration: underline;
+        }
+        #status {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            margin-top: 20px;
+            display: none;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Certificate Link Generator from Google Sheets</h1>
+        <div class="button-container">
+            <button id="generateButton" class="btn" onclick="generateLinks()">Generate Links</button>
+            <button id="downloadAllButton" class="btn" onclick="downloadAllCertificates()" style="display: none;">Download All Certificates</button>
+        </div>
+        <div id="status"></div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+        <div id="linkList"></div>
+    </div>
+
+    <script>
+        const sheetId = '1Wf-0tNXnASISKCbHy0RMKtPVoS8Wgts4rluPM-mOLkA';
+        const apiKey = 'AIzaSyCq9l2N2mxxLdaPb0Kq4ALI7FxVJf8FKsk';
+        const range = 'Sheet6!A2:A82';
+        let names = [];
+
+        async function fetchNames() {
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data.values.flat().filter(name => name);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('status').textContent = `Error fetching data: ${error.message}`;
+                return [];
+            }
+        }
+
+        async function generateLinks() {
+            document.getElementById('status').textContent = 'Fetching names from Google Sheets...';
+            document.getElementById('generateButton').disabled = true;
+            names = await fetchNames();
+            const linkList = document.getElementById('linkList');
+            linkList.innerHTML = '';
+
+            if (names.length === 0) {
+                document.getElementById('status').textContent = 'No names found or error occurred. Please check the console for more details.';
+                document.getElementById('generateButton').disabled = false;
+                return;
+            }
+
+            names.forEach(name => {
+                const encodedName = encodeURIComponent(name.trim());
+                const viewUrl = `https://www.empowerlocals.org/certificates_elp_lseft_2024.html?name=${encodedName}`;
+                const downloadUrl = `https://www.empowerlocals.org/certificates_elp_lseft_2024.html?name=${encodedName}&download=true`;
+                
+                const viewLink = document.createElement('a');
+                viewLink.href = viewUrl;
+                viewLink.textContent = `View certificate for ${name}`;
+                viewLink.target = '_blank';
+                linkList.appendChild(viewLink);
+
+                const downloadLink = document.createElement('a');
+                downloadLink.href = downloadUrl;
+                downloadLink.textContent = `Download certificate for ${name}`;
+                downloadLink.target = '_blank';
+                linkList.appendChild(downloadLink);
+
+                linkList.appendChild(document.createElement('br'));
+                linkList.appendChild(document.createElement('br'));
+            });
+
+            document.getElementById('status').textContent = `Generated ${names.length} links successfully.`;
+            document.getElementById('generateButton').disabled = false;
+            document.getElementById('downloadAllButton').style.display = 'inline-block';
+        }
+
+        async function downloadAllCertificates() {
+            const zip = new JSZip();
+            document.getElementById('status').textContent = 'Downloading certificates...';
+            document.getElementById('downloadAllButton').disabled = true;
+            document.querySelector('.progress-container').style.display = 'block';
+            const progressBar = document.getElementById('progressBar');
+
+            for (let i = 0; i < names.length; i++) {
+                const name = names[i];
+                const encodedName = encodeURIComponent(name.trim());
+                const url = `https://www.empowerlocals.org/certificates_elp_lseft_2024.html?name=${encodedName}&download=true`;
+                
+                try {
+                    const response = await fetch(url);
+                    const blob = await response.blob();
+                    zip.file(`${name}_certificate.pdf`, blob);
+
+                    // Update progress
+                    const progress = Math.round(((i + 1) / names.length) * 100);
+                    progressBar.style.width = `${progress}%`;
+                    progressBar.textContent = `${progress}%`;
+                } catch (error) {
+                    console.error(`Error downloading certificate for ${name}:`, error);
+                }
+            }
+
+            zip.generateAsync({type:"blob"})
+            .then(function(content) {
+                saveAs(content, "all_certificates.zip");
+                document.getElementById('status').textContent = 'All certificates downloaded successfully.';
+                document.getElementById('downloadAllButton').disabled = false;
+                progressBar.style.width = '100%';
+                progressBar.textContent = '100%';
+            });
+        }
+    </script>
+</body>
+</html>

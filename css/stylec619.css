@@ -1,0 +1,3475 @@
+﻿/*------------------------------------------------------------------
+[Table of contents]
+1. HTML5 display-role reset for older browsers
+  1.1 css reset
+  1.2 global css
+2. Header css
+3. Banner css
+4. About css
+5. Today's Special Menu css
+6. Our Menu css
+7. Video Menu css
+8. Everyday's Menu css
+9. Team css
+10. Food Gallery css
+11. Testimonial css
+12. Blog css
+13. Catering css
+14. Reservation css
+15. Footer css
+16. Copyright css
+17. Back To Top css
+18. Blog Page css
+19. Blog Detail Page css
+20. 404 css
+21. Element page css
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Galada|Playball|Poppins:300,400,500,600,700');
+@import url('https://fonts.cdnfonts.com/css/museo-slab');
+
+
+
+
+
+
+/* ==================================================
+    1. HTML5 display-role reset for older browsers
+===================================================== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a,
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: #717171;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #717171;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #717171;
+}
+
+:-ms-input-placeholder {
+    color: #717171;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #e75b1e;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+    color: #040404;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #e75b1e;
+}
+
+::selection {
+    color: #fff;
+    background: #e75b1e;
+}
+
+
+/* 1.1 css reset */
+
+.clear {
+    clear: both;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+
+/* 1.2 Global CSS */
+
+body {
+    margin: 0;
+    font-size: 14px;
+    color: #686868;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif, sans-serif;
+    background-image: url("../images/full-bg.png");
+    background-repeat: repeat;
+    background-position: center center;
+    --grid-gutter: 1rem;
+}
+
+h1 {
+    font-size: 115px;
+    line-height: 100px;
+}
+
+h2 {
+    font-size: 54px;
+    line-height: 64px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 27px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 27px;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 27px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 400;
+}
+
+p {
+    font-size: 14px;
+    line-height: 27px;
+    margin: 0 0 15px;
+}
+
+.mar-top-320 {
+    margin-top: 320px;
+}
+
+.mar-bottom-25 {
+    margin-bottom: 25px;
+}
+
+.pad-top-100 {
+    padding-top: 90px;
+}
+
+.pad-bottom-100 {
+    padding-bottom: 91px;
+}
+
+.pad-bottom-70 {
+    padding-bottom: 70px;
+}
+
+.no-pad-left {
+    padding-left: 0;
+}
+
+.no-pad-right {
+    padding-right: 0;
+}
+
+.pr {
+    position: relative;
+}
+
+.parallax-fix {
+    position: relative;
+    background-size: cover !important;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat !important;
+    transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    background-attachment: fixed !important
+}
+
+.parallax-fix .row {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+
+.block-title {
+    color: #e75b1e;
+    margin: 0;
+    text-align: center;
+    font-family: 'Playball', cursive;
+    letter-spacing: 1.62px;
+}
+
+.title-caption {
+    letter-spacing: 0.16px;
+    padding: 20px 120px;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+
+/* ===================================
+    2. Header CSS
+====================================== */
+
+/* styles.css */
+
+.navbar-default1 {
+    background-color: white;
+
+    /* Add any other CSS styles for the "navbar-default1" class here */
+}
+
+
+
+
+
+.header-block {
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header-block .navbar-default {
+    border: 0;
+    background-color: white;
+    margin: 0;
+}
+
+
+.header-block .navbar-brand {
+    margin: 0 !important;
+    padding: 23px 0 21px;
+    display: inline-block;
+    line-height: normal;
+    font-size: 100%;
+    height: 100%;
+}
+
+.header-block .menuBar ul li a {
+    color: black;
+    /* text-transform: uppercase; */
+ font-weight: 400;
+    letter-spacing: 1.6px;
+    padding: 43px 0px 15px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 20px;
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+    font-weight: 500;
+    font-size: 20px;
+  
+}
+
+
+
+
+.header-block .menuBar ul li:last-child a {
+    margin-right: 0;
+}
+
+.header-block .menuBar ul li:first-child a {
+    margin-left: 0;
+}
+
+.header-block .menuBar ul li a:hover,
+.header-block .menuBar ul li a:focus,
+.header-block .menuBar ul li.active a {
+    color: #fff;
+    background-color: transparent;
+}
+
+.header-block .menuBar ul li.active a,
+.header-block .menuBar ul li.active a:hover,
+.header-block .menuBar ul li.active a:focus {
+    color: #e75b1e;
+    background-color: transparent;
+}
+
+.header-block .menuBar ul li.active a::after,
+.header-block .menuBar ul li.active a::before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+.header-block .menuBar ul li.active a::before {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.header-block .menuBar ul li a:hover::before,
+.header-block .menuBar ul li a:focus::before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.header-block .menuBar ul li a::before,
+.header-block .menuBar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    -webkit-transform: scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    -webkit-transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.header-block .menuBar ul li a::before {
+    background: #b5b5b5;
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+.header-block .menuBar ul li a::after {
+    background: #e75b1e;
+}
+
+.navbar-brand>img {
+    max-width: 251px;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.fixed .navbar-brand>img {
+    max-width: 150px;
+}
+
+.fixed .menuBar ul li a {
+    padding: 30px 0px 13px;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.fixed {
+    background-color: #040404;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.fixed .navbar-brand {
+    padding: 14px 0 12px;
+}
+
+.menuBar {
+    padding: 0 10px;
+}
+
+
+/* styles.css */
+
+/* styles.css */
+
+/* styles.css */
+
+.nav-item {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the margin as needed */
+    vertical-align: middle; /* Align the button vertically in the middle of the list item */
+}
+
+.donate-item {
+    margin-right: 0; /* Remove right margin for the last item */
+}
+
+.navbtn {
+    display: inline-block;
+    padding: 8px 16px; /* Adjust the padding for height and width */
+    background-color: yellow;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 36px;
+    cursor: pointer;
+    margin-top: 25px; /* Adjust the margin-top to bring the button down */
+}
+
+.navbtn:hover {
+    background-color: yellow;
+    
+}
+
+
+/* ===================================
+    3. Banner CSS
+====================================== */
+
+
+
+/* Styles for the donation container */
+.donation-container {
+    height: 850px; /* Set the desired height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles for the donation form */
+.donation-form {
+    text-align: center;
+    margin: 20px; /* Add margin as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for the donation title */
+.donation-title {
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-bottom: 10px; /* Add margin at the bottom */
+    
+}
+
+/* Styles for the donation description */
+.donation-description {
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+/* Styles for the donation input */
+.donation-input {
+    height: 40px; /* Increase height as needed */
+    padding: 10px; /* Add padding as needed */
+    font-weight: bold; /* Make it bold */
+}
+
+/* Styles for the donation button */
+.donation-button {
+    height: 50px; /* Increase height as needed */
+    font-weight: bold; /* Make it bold */
+    margin-top: 10px; /* Add margin at the top */
+}
+
+
+
+
+
+/* Button Styles */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 36px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+/* Remove list-style (bullets or numbers) from the unordered list */
+.column-list {
+    list-style: none;
+    padding: 40px;
+    margin: 5rem;
+}
+
+
+/* Styles for the container */
+.supportone-container {
+    display: flex;
+    flex-direction: row; /* Arrange children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    background-color: #f3f4f6;
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align the content */
+    height: auto; /* Allow the container to adjust its height based on content */
+    margin: 0; /* Remove horizontal margin */
+}
+
+
+
+
+.supportone-container button {
+    background-color: #25245d;
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    font-family: 'Museo Slab', sans-serif; 
+    text-align: center;
+    padding: 20px 40px;
+    display: inline-block;
+    border-radius: 36px;
+    transition: background-color 0.3s ease;
+ 
+}
+
+.supportone-container button:hover {
+    background-color: black;
+}
+
+/* CSS for the "Donate Now" button with a different background color */
+.btn-primary.donate-button {
+    background-color: #e75b1e; /* Change to your desired background color */
+}
+
+.btn-primary.donate-button:hover {
+    background-color: #d43f1a; /* Change to your desired hover background color */
+}
+
+
+
+.column-title {
+    font-size: 5rem; /* Use relative units like 'rem' to make font size less dependent on zoom */
+    line-height: 1.5;
+    color: #333;
+    
+    font-family: 'Poppins', sans-serif;
+    padding: 1.5rem; /* Reduce padding to make it less dependent on zoom */
+}
+
+
+.column-subtitle {
+
+    line-height: 1;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 500;
+    font-size: 1.5rem;
+
+    letter-spacing: 1;
+    line-height: 1.666666667;
+   
+}
+
+
+/* Style for column text (p) */
+.column-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+  
+}
+
+
+
+
+/* Define a CSS class for margin between sections */
+.section-margin {
+    margin-top: 80px; /* Adjust the margin as needed */
+}
+
+/* Define a CSS class for margin between sections */
+.within-margin {
+    margin-top: 2.5rem; /* Adjust the margin as needed */
+}
+
+
+/* Styles for the container */
+.support-container {
+    text-align: center;
+    padding: 20px; /* Adjust as needed */
+    background-color: #f3f4f6;
+    text-align: center; /* Center-align the content */
+    height: 10px; /* Adjust the height as needed */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+
+    
+}
+
+
+
+/* Styles for the specific class applied to <p> elements */
+.support-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    font-weight: normal;
+    color: #e75b1e;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px; /* Set a maximum width for the <p> element */
+    line-height: 1.5; /* Increase line spacing for better readability */
+    word-wrap: break-word; /* Allow words to wrap to the next line when needed */
+    text-align: center; /* Center-align the text within the <p> element */
+    margin: 0 auto; /* Center-align the <p> element within its container */
+}
+
+
+
+
+/* Custom class for adding space around the row */
+.spaced-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+.custom-flex-container {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    height: 450px; /* Adjust the height as needed */
+    background-color: whitesmoke;
+    color: #000;
+    font-family: 'Museo Slab', sans-serif;
+}
+
+.custom-shape {
+    /* Add the new properties here */
+    font-size: 13px;
+    top: 0;
+    left: 0;
+    transform: translateY(-38%);
+    z-index: 2;
+}
+
+.custom-flex-container h3 {
+    /* Styles for h3 element */
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: bold; 
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 12px;
+    margin-bottom: 18px;
+}
+
+.custom-flex-container p {
+    /* Styles for p element */
+    color: #999;
+    font-size: 120px;
+    color:#e75b1e;
+    line-height: 1.15;
+    font-weight: bold; 
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 12px;
+    margin-bottom: 18px;
+}
+
+
+/* Styles for the vision container */
+.vision-container {
+    background-color:#e75b1e;; /* Highlight color */
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align the content */
+    height: 450px; /* Adjust the height as needed */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+
+}
+
+/* Style for the vision container */
+.vision-container {
+    background-color: yellow; /* Highlight color */
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center; /* Center-align the content */
+}
+
+/* Style for the vision content */
+.vision-content {
+    font-family: 'Museo Slab', sans-serif;
+    font-weight: normal; /* Example font weight */
+    color: #333; /* Example text color */
+    text-align: left; /* Align text to the left for better readability */
+    line-height: 1.5; /* Increase line spacing for better readability */
+    max-width: 1000px; /* Limit the maximum width of the text for easier reading */
+    margin: 0 auto; /* Center the text horizontally within the container */
+}
+
+/* Style for individual paragraphs */
+.vision-content p {
+    margin: 10px 0; /* Add vertical margin between paragraphs */
+    font-size: 48px; /* Adjust font size as needed */
+}
+
+/* Styles for custom columns */
+.custom-column {
+    color: #000;
+    height: 240px; /* Adjust the height as needed */
+    padding: 25rem 5vw 12px;
+    margin: 0 -24px;
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    position: relative;
+}
+
+/* Add a border and some spacing to separate columns */
+.custom-column {
+    margin-top: 20px;
+}
+
+/* Add a border line to each column individually */
+.custom-column:nth-child(odd) {
+    border-top: 1.4px solid #000;
+}
+
+/* Styles for the text within the columns */
+.custom-column h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 18px;
+}
+
+.custom-column p {
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 1;
+    margin-bottom: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styles for the text within the columns */
+.custom-column button {
+    background-color: #fff; /* White background color */
+    color: #000; /* Text color (black) */
+    border: 2px solid #e75b1e;; /* Pink border */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom-column button:hover {
+    background-color: #e75b1e;; /* Pink background color on hover */
+    color: #fff; /* Text color (white) on hover */
+}
+
+
+
+
+
+
+/* Custom CSS for the container */
+.mission-container {
+    /* Set a fixed or maximum height for the container */
+
+    /* Add other styling properties as desired */
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding:10px;
+    margin-top:200px;
+    
+
+}
+
+/* CSS to style the section title */
+.miss-section-title h1 {
+
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Text color */
+    font-size: 52px; /* Font size */
+    font-weight: bold; /* Font weight */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border: 1px solid transparent; /* Invisible border */
+
+}
+
+.separator {
+    width: 10%; /* Adjust the width as needed */
+    height: 10px; /* Adjust the height to make it thicker or thinner */
+    background-color:   #e75b1e; /* Adjust the color */
+    margin: 10px 0; /* Adjust the margin to control the spacing */
+
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+   
+    align-items: center; /* Center content vertically */
+}
+
+
+/* CSS to style the section title */
+.miss-section-title h2{
+
+    font-family: 'Poppins', sans-serif;
+    color:#e75b1e; /* Text color */
+    font-size: 52px; /* Font size */
+    font-weight: bold; /* Font weight */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border: 1px solid transparent; /* Invisible border */
+
+}
+
+
+
+
+/* CSS to style the section title */
+.miss-section-title h3{
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 22px; /* Font size */
+    font-weight: bold; /* Font weight */
+
+}
+
+
+/* CSS to style the section title */
+.miss-section-title p{
+
+    font-family: 'Poppins', sans-serif;
+   
+
+    display: flex;
+
+    border: 1px solid transparent; /* Invisible border */
+
+}
+
+
+
+
+
+
+/* Common caption styling */
+.caption {
+   
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-family: 'Museo Slab', sans-serif;
+    font-weight: 100;
+    color: #333; /* Example text color */
+    
+    margin-left: 50px; /* Adjust as needed for spacing */
+
+    
+}
+
+
+/* Container for equal-size columns */
+.equal-size-column {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border: 1px solid transparent; /* Invisible border */
+    padding: 5px; /* Adjust as needed for spacing */
+}
+.resized-image,
+.resized-video {
+    max-width: 100%; /* Allow images and videos to scale down but not exceed their original dimensions */
+    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+    object-fit: cover; /* Cover the container while preserving aspect ratio */
+}
+
+/* Styling for captions under images and video */
+.item-caption {
+    font-size: 40px;
+    line-height: 1.5;
+    margin-top: 20px; /* Adjust as needed for spacing */
+    text-align: center; /* Center the caption text */
+    font-family:  sans-serif;
+    display: inline;
+    font-weight: 300;
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+   
+    
+}
+
+/* CSS in your external CSS file */
+.item-caption a {
+    text-decoration: underline;
+    color: inherit; /* Inherit the text color from the parent element */
+    transition: color 0.3s; /* Add a smooth color transition effect */
+}
+
+/* Change the link color to #e75b1e; when hovering */
+.item-caption a:hover {
+    color: #e75b1e;;
+}
+
+
+/* Bold styling for the video caption */
+.bold-caption {
+    font-weight: bold;
+}
+
+
+
+
+
+.banner {
+    display: inline-block;
+    height: 40vh; /* Adjust the height to your desired value */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    vertical-align: left;
+}
+
+
+
+.background-image {
+
+
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/banner.jpg);
+ 
+      background-size: contain, cover;
+    z-index: -1; /* Ensure the background is behind other content */
+}
+
+
+
+.banner .container {
+    height: 100%;
+}
+
+.banner .col-lg-12 {
+    height: 100%;
+}
+
+.banner-text {
+    display: table;
+    height: 100%;
+    width: 100%;
+    
+    margin: 0 0;
+    text-align: center;
+}
+
+.banner-cell {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+}
+
+
+.banner-text h1 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2.7px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold; 
+    color: whitesmoke;
+
+
+}
+
+/* Define a CSS class for the #e75b1e; color */
+.red-text {
+    color:#e75b1e;
+}
+
+#typing-text::after {
+    content: "";
+    margin-left: 5px;
+    width: 0; /* Adjust the width to make it slimmer or wider */
+    height: 0.6em; /* Adjust the height to control the cursor length */
+    box-shadow: 0 0 0 1px #fff; /* Use box-shadow to create the cursor */
+    display: inline-block;
+    animation: blink-caret 1s infinite; /* Blinking cursor animation */
+}
+
+@keyframes blink-caret {
+    0%, 100% {
+        width: 0; /* Make it disappear at the start and end of animation */
+    }
+    50% {
+        width: 2px; /* Make it fully visible in the middle of animation */
+    }
+}
+
+
+
+.banner-text h1 img {
+    position: absolute;
+    top: 33px;
+    left: -10px;
+}
+
+.banner-text h3 {
+    font-size: 34px;
+    color: #cdcdcd;
+    font-family: 'Galada', cursive;
+}
+
+.banner-text p {
+    color: #e3e3e3;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 33px;
+}
+
+
+
+
+
+
+.orange-btn {
+    min-width: 219px;
+    padding: 16.5px 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 800;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.orange-btn.empty-btn {
+    background-color: transparent;
+    border-color: #e75b1e;
+    color: #e75b1e;
+}
+
+.orange-btn:hover {
+    color: #e75b1e;
+}
+
+.orange-btn.empty-btn:hover {
+    color: #fff;
+}
+
+.banner-buttons .empty-btn {
+    margin-left: 16px;
+}
+
+.banner-buttons .orange-btn {
+    margin-top: 34px;
+}
+
+.orange-btn:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 2px solid transparent;
+}
+
+.orange-btn.empty-btn:before {
+    border: 2px solid #e75b1e;
+}
+
+.orange-btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #e75b1e;
+}
+
+.orange-btn.empty-btn:after {
+    background: transparent;
+    width: 0%;
+}
+
+.orange-btn:hover:before {
+    border-color: #e75b1e;
+}
+
+.orange-btn:hover:after {
+    width: 0%;
+}
+
+.orange-btn.empty-btn:hover:after {
+    background: #e75b1e;
+    width: 100%;
+}
+
+.banner-text h2 {
+    color: #e75b1e;
+    font-family: 'Playball', cursive;
+    position: relative;
+    top: -14px;
+    margin-bottom: 7px;
+}
+
+.side-img {
+    width: 75px;
+    display: inline-block;
+    height: 14px;
+}
+
+.side-img i {
+    margin: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-bottom: 1px;
+    border: 0;
+    border-top: 1px solid #e75b1e;
+    height: 1px;
+    display: inline-block;
+    width: 75px;
+    float: left;
+}
+
+.side-img i:first-child,
+.side-img i:last-child {
+    width: 65px;
+}
+
+.side-img.left-side-img i:first-child,
+.side-img.left-side-img i:last-child {
+    width: 65px;
+    margin: 0 0 1px 10px;
+}
+
+
+/* ===================================
+    4. About CSS
+====================================== */
+
+.about-block .block-title {
+    text-align: left;
+}
+
+.about-block h3 {
+    font-weight: 800;
+    color: #717171;
+    position: relative;
+    letter-spacing: 0.72px;
+    padding: 6px 0 25px;
+}
+
+.about-block p {
+    font-size: 16px;
+    letter-spacing: 0.16px;
+}
+
+.about-img img {
+    position: absolute;
+    top: -9px;
+    left: 0;
+}
+
+.about-img {
+    position: relative;
+}
+
+.about-block p:last-of-type {
+    margin: 10;
+}
+
+.about-block {
+    margin-bottom: 15px;
+}
+
+
+/* ===================================
+    5. Today's Special Menu CSS
+====================================== */
+
+.special-menu-block {
+    display: inline-block;
+    background-image: url(../images/special-menu-bg.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+.special-menu-block.parallax-fix {
+    overflow: visible;
+}
+
+.special-menu-block:before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.67);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.spcl-text {
+    display: inline-block;
+    width: 91.5%;
+    background-color: #fff;
+    padding: 30px 21px;
+    /* position: absolute; */
+    top: 63%;
+    text-align: center;
+    border: 10px solid #eaeaea;
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-top: -170px;
+}
+
+.spcl-menu .col-lg-4 {
+    padding: 0 9px;
+}
+
+.spcl-text h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.18px;
+}
+
+.spcl-text p {
+    color: #717171;
+    line-height: 23px;
+    padding-top: 4px;
+    margin-bottom: 18px;
+}
+
+.spcl-menu-btm .stars {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    padding: 9px 0 6px;
+}
+
+.spcl-menu-btm {
+    border-top: 1px dashed rgba(113, 113, 113, 0.33);
+    padding-top: 15px;
+}
+
+.spcl-menu .item {
+    position: relative;
+}
+
+.spcl-menu-btm .stars li {
+    display: inline-block;
+}
+
+.spcl-menu-btm h4 {
+    color: #717171;
+    display: inline-block;
+    width: 100%;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.special-menu-block .owl-controls {
+    display: none;
+}
+
+.spcl-menu {
+    margin-top: 25px;
+    padding-bottom: 92px;
+    display: inline-block;
+}
+
+
+/* ===================================
+    6. Our Menu CSS
+====================================== */
+
+.our-menu-block:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/our-menu-bottom.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.menu-list h3 {
+    color: #717171;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.menu-list h5 {
+    letter-spacing: 0.16px;
+}
+
+.menu-list ul {
+    padding: 10px 0 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu-list ul li {
+    padding-top: 30px;
+}
+
+.menu-list ul li figure {
+    display: inline-block;
+    width: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-top: 9px;
+}
+
+.menu-list ul li figure img {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.menu-list ul li .menu-info {
+    display: table;
+    padding-left: 20px;
+    position: relative;
+}
+
+.menu-info h5 {
+    font-weight: 800;
+    color: #717171;
+    display: inline-block;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+    padding-right: 5px;
+}
+
+.menu-info h5.menu-price {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    padding-left: 5px;
+    color: #e75b1e;
+}
+
+.menu-info:before {
+    content: '';
+    background-image: url(../images/dots.jpg);
+    background-repeat: repeat-x;
+    position: relative;
+    display: block;
+    height: 3px;
+    top: 15px;
+}
+
+.our-menu-block .col-lg-6:first-of-type,
+.our-menu-block .col-lg-6:first-of-type+div {
+    margin: 18px 0 40px;
+}
+
+.our-menu-list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 10px solid #e75b1e;
+    padding: 30px;
+    margin-top: 68px;
+    background-image: url('../images/menu-separator.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.our-menu-list:before {
+    content: '';
+    display: inline-block;
+    background-image: url('../images/empower locals logo cycle.png');
+    background-position: top left;
+    width: 166px;
+    min-height: 241px;
+    position: absolute;
+    background-size: 100%;
+    bottom: 100%;
+    background-repeat: no-repeat;
+    right: -55px;
+   
+    }
+
+.no-pad-left .menu-list {
+    padding-right: 35px;
+}
+
+.no-pad-right .menu-list {
+    padding-left: 20px;
+}
+
+
+/* ===================================
+    7. Video Menu CSS
+====================================== */
+
+.video-menu-block {
+    display: inline-block;
+    background-image: url('../images/video-bg.jpg');
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    min-height: 512px;
+    vertical-align: top;
+}
+
+.video-menu-block:before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-menu-block h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 18px;
+}
+
+.video-menu-block h2.block-title {
+    text-transform: capitalize;
+    font-weight: normal;
+    margin: 12px 0 0;
+}
+
+.video-menu-block a {
+    font-size: 150px;
+    line-height: 48px;
+    margin-top: 23px;
+    display: inline-block;
+}
+
+.video-menu-block a:hover {
+    color: #e75b1e;
+}
+
+#recipe-video {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    height: 100%;
+    background-color: #000;
+}
+
+
+/* ===================================
+    8. Everyday's Menu CSS
+====================================== */
+
+.tab-content .item figure {
+    margin-bottom: 100px;
+}
+
+.tab-menu .nav-tabs>li.active>a,
+.tab-menu .nav-tabs>li.active>a:focus,
+.tab-menu .nav-tabs>li.active>a:hover {
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+}
+
+.tab-menu .nav-tabs > li {
+    float: left;
+    display: inline-block;
+    margin: 0;
+    background-color: #eaeaea;
+    overflow: visible;
+}
+
+.tab-menu .nav-tabs {
+    border: 0;
+    text-align: center;
+    margin: 13px auto;
+    display: inline-block;
+}
+
+.tab-menu .nav>li>a:focus,
+.tab-menu .nav>li>a:hover {
+    background-color: transparent;
+}
+
+.tab-menu .nav-tabs>li>a {
+    border: 0;
+    color: #717171;
+    font-size: 24px;
+    font-family: 'Playball', cursive;
+    letter-spacing: 1.62px;
+    text-transform: capitalize;
+    margin: 0 15px;
+    overflow: visible;
+    font-weight: 400;
+}
+
+.tab-menu .nav-tabs>li:first-child>a {
+    /* margin-right: 0; */
+}
+
+.tab-menu .nav-tabs>li:last-child>a {
+    /*margin-right: 0;*/
+}
+
+.tab-menu .tab-content > .tab-pane {
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 0;
+    top: 0;
+}
+
+.tab-menu .tab-content > .active {
+    height: auto;
+    position: static;
+}
+
+.tab-menu .nav-tabs>li>a:after {
+    /* content: ''; */
+    width: 8px;
+    height: 54px;
+    background-color: #fff;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -19px;
+    transform: skew(-15deg);
+    z-index: 1;
+}
+
+.tab-menu .nav-tabs>li:last-child>a:after {
+    width: 0;
+}
+
+.tab-menu .owl-controls {
+    position: absolute;
+    top: 40%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 100%;
+}
+
+.tab-menu .owl-controls .owl-prev {
+    font-size: 0;
+    float: left;
+    position: relative;
+    left: -90px;
+}
+
+.tab-menu .owl-controls .owl-next {
+    font-size: 0;
+    float: right;
+    position: relative;
+    right: -90px;
+}
+
+.tab-menu .owl-nav .owl-prev:before {
+    font-family: FontAwesome;
+    content: "\f053";
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    width: 47px;
+    height: 47px;
+    background-color: #e75b1e;
+    text-align: center;
+    line-height: 47px;
+}
+
+.tab-menu .owl-nav .owl-next:before {
+    font-family: FontAwesome;
+    content: "\f054";
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    width: 47px;
+    height: 47px;
+    background-color: #e75b1e;
+    text-align: center;
+    line-height: 47px;
+}
+
+.tab-menu .owl-carousel .owl-stage-outer {
+    padding: 0 0 30px;
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-menu .nav-tabs > li:first-child {
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    position: relative;
+    left: 7px;
+}
+
+.tab-menu .nav-tabs > li:last-child {
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+    left: -7px;
+}
+
+.tab-menu .nav-tabs > li.active {
+    background-color: #e75b1e;
+}
+
+.tab-menu {
+    text-align: center;
+}
+
+.tab-menu li:nth-child(2) a {
+    -webkit-transform: skewX(15deg);
+    -moz-transform: skewX(15deg);
+    -ms-transform: skewX(15deg);
+    -o-transform: skewX(15deg);
+    transform: skewX(15deg);
+}
+
+.tab-menu li:nth-child(2) {
+    -webkit-transform: skewX(-15deg);
+    -moz-transform: skewX(-15deg);
+    -ms-transform: skewX(-15deg);
+    -o-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+    border-left: 5px solid #ffffff;
+    border-right: 5px solid #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ===================================
+    9. Team CSS
+====================================== */
+
+.team-block {
+    display: inline-block;
+    background-image: url(../images/team-bg.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+.team-block:before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.team-info {
+    display: table;
+    padding: 47px 20px 20px;
+    background-color: #fff;
+}
+
+.team-text figure {
+    display: inline-block;
+    float: left;
+    max-width: 202px;
+    overflow: hidden;
+}
+
+.team-text {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.team-info h3 {
+    text-transform: uppercase;
+}
+
+.team-info h4 {
+    font-weight: 700;
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.team-info strong {
+    font-weight: 600;
+}
+
+
+
+.team-info h4:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: #e3e3e3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#owl-team {
+    margin-top: 25px;
+}
+
+.test-video-box figure {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #e75b1e;
+}
+
+.test-video-box figure .test-video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 70px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    margin: 0;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.test-video-box figure img {
+    opacity: 0.3;
+    height: 100%;
+    width: 100%;
+}
+
+.test-video-box video,
+.test-video-box iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.owl-carousel .owl-video-play-icon {
+    /*background-color: #717171;*/
+    background-image: none;
+}
+
+.team-video {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: none;
+}
+
+.owl-team-box {
+    position: relative;
+}
+
+.owl-team-box .owl-controls {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 100%;
+    z-index: -1;
+}
+
+.owl-team-box .owl-controls .owl-prev {
+    font-size: 0;
+    float: left;
+    position: relative;
+    left: -90px;
+    display: block !important;
+}
+
+.owl-team-box .owl-controls .owl-next {
+    font-size: 0;
+    float: right;
+    position: relative;
+    right: -90px;
+    display: block !important;
+}
+
+.owl-team-box .owl-nav .owl-prev:before {
+    font-family: FontAwesome;
+    content: "\f053";
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    width: 47px;
+    height: 47px;
+    background-color: #e75b1e;
+    text-align: center;
+    line-height: 47px;
+}
+
+.owl-team-box .owl-nav .owl-next:before {
+    font-family: FontAwesome;
+    content: "\f054";
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    width: 47px;
+    height: 47px;
+    background-color: #e75b1e;
+    text-align: center;
+    line-height: 47px;
+}
+
+
+/* ===================================
+    10. Food Gallery CSS
+====================================== */
+
+.food-gallery {
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.food-gallery-item {
+    width: 25%;
+    padding: 9px;
+    float: left;
+    position: relative;
+}
+
+.food-gallery-item.wide {
+    width: 50%;
+}
+
+.food-gallery-item img {
+    display: block;
+}
+
+.gallery-big-height {
+    max-height: 386px;
+    overflow: hidden;
+}
+
+.gallery-small-height {
+    max-height: 193px;
+    overflow: hidden;
+}
+
+.food-gallery-item a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /*position: relative;*/
+    vertical-align: top;
+}
+
+.food-gallery-item .image-hover-overlay {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: block;
+    width: -webkit-calc(100% - 30px);
+    width: calc(100% - 30px);
+    height: -webkit-calc(100% - 30px);
+    height: calc(100% - 30px);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    background-color: rgba(231, 91, 30, 0.7);
+}
+
+.food-gallery-item:hover .image-hover-overlay {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.image-hover-overlay i.fa {
+    color: #fff;
+    font-size: 50px;
+}
+
+.food-gallery-item .image-hover-overlay i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+
+/* ===================================
+    11. Testimonial CSS
+====================================== */
+
+.testimonial-block {
+    display: inline-block;
+    background-image: url(../images/testimonial-bg.jpg);
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+.testimonial-block:before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.80);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.testimonial-slider {
+    margin-top: 46px;
+}
+
+.testimonial-slider figure {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px auto 33px;
+}
+
+.testimonial-slider .item {
+    width: 82%;
+    margin: 0 auto;
+}
+
+.testimonial-slider .item p {
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.16px;
+    margin: 0 0 23px;
+}
+
+.testimonial-slider .item h5 {
+    text-transform: uppercase;
+    letter-spacing: 2.72px;
+    font-weight: 700;
+}
+
+.testimonial-slider figure img {
+    border-radius: 50%;
+    border: 4px solid #e75b1e;
+}
+
+.testimonial-slider .owl-controls {
+    position: absolute;
+    top: 50%;
+    /*-webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);*/
+    width: 100%;
+}
+
+.testimonial-slider .owl-controls .owl-prev {
+    font-size: 0;
+    float: left;
+    position: relative;
+    left: 0px;
+    display: block !important;
+}
+
+.testimonial-slider .owl-controls .owl-next {
+    font-size: 0;
+    float: right;
+    position: relative;
+    right: 0px;
+    display: block !important;
+}
+
+.testimonial-slider .owl-nav .owl-prev:before {
+    font-family: FontAwesome;
+    content: "\f053";
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    width: 47px;
+    height: 47px;
+    background-color: #e75b1e;
+    text-align: center;
+    line-height: 47px;
+}
+
+.testimonial-slider .owl-nav .owl-next:before {
+    font-family: FontAwesome;
+    content: "\f054";
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    width: 47px;
+    height: 47px;
+    background-color: #e75b1e;
+    text-align: center;
+    line-height: 47px;
+}
+
+.testimonial-slider .stars {
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    margin: 17px 0 23px;
+}
+
+.testimonial-slider .stars li {
+    float: left;
+    display: inline-block;
+    margin: 0 2.5px;
+}
+
+.testimonial-slider .stars a:hover {
+    color: #fff;
+}
+
+
+/* ===================================
+    12. Blog CSS
+====================================== */
+
+.blog-box h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 27px 0 11px;
+}
+
+.blog-box p {
+    font-size: 16px;
+    margin: 15px 0 0;
+    letter-spacing: 0.16px;
+}
+
+.blog-box {
+    position: absolute;
+    top: -45px;
+    left: -30px;
+    max-width: 570px;
+}
+
+.blog-box figure {
+    background-color: #000;
+    position: relative;
+}
+
+.blog-box figure img {
+    opacity: 0.5;
+}
+
+.blog-box figure:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 97%;
+    height: 94%;
+    border: 2px solid #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.blog-row {
+    display: inline-block;
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    border: 10px solid #eaeaea;
+    padding: 20px;
+    margin-bottom: 80px;
+}
+
+.blog-row:last-of-type {
+    margin-bottom: 20px;
+}
+
+.blog-date {
+    display: inline-block;
+    float: left;
+    margin: 0 24px;
+    background-color: #e75b1e;
+    color: #fff;
+    width: 63px;
+    height: 74px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.14px;
+    padding: 15px 0;
+    position: relative;
+}
+
+.blog-text {
+    display: table;
+}
+
+.blog-date span {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.blog-date:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border: 1px dotted #fff;
+    top: 6px;
+    left: 5px;
+}
+
+.blog-text h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.blog-text hr {
+    border-top: 1px dashed rgba(113, 113, 113, 0.20);
+}
+
+.blog-text p {
+    font-size: 16px;
+}
+
+.blog-text p:last-of-type {
+    margin: 0;
+}
+
+.blog-row-right .blog-box {
+    left: auto;
+    right: -30px;
+}
+
+.blog-row-right .blog-date {
+    margin-left: 0;
+}
+
+.blog-row-right .blog-text {
+    margin-right: 30px;
+}
+
+.blog-row:first-of-type {
+    margin-top: 28px;
+}
+
+
+/* ===================================
+    13. Catering CSS
+====================================== */
+
+.catering-block {
+    display: inline-block;
+    background-image: url(../images/catering-bg.png);
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+.catering-block:before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.catering-block .orange-btn {
+    padding: 22px 26px;
+}
+
+.catering-block .block-title {
+    margin: 20px 0 47px;
+}
+
+.catering-block .col-lg-12 {
+    margin: 10px 0;
+}
+
+
+/* ===================================
+    14. Reservation CSS
+====================================== */
+
+.reservation-block .form-box input,
+.reservation-block .form-box select {
+    width: 100%;
+    border: 2px solid #eaeaea;
+    height: 61px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #717171;
+    letter-spacing: 0.224px;
+    padding: 5px 30px;
+    border-radius: 0;
+    opacity: 1;
+    position: relative;
+}
+
+.reservation-block .form-box {
+    margin-bottom: 30px;
+}
+
+.reservation-block .col-lg-6 .form-box {  
+    margin-bottom: 10px;
+}
+
+.reservation-block .form-box select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: #fff url(../images/selectDown.png) no-repeat right 23px center;
+    background-size: 14px;
+    cursor: pointer;
+}
+
+.reservation-block .form-box select::-ms-expand {
+    display: none;
+}
+
+#reservation:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-image: url(../images/reservation-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom -70px left -70px;
+    width: 100%;
+    height: 100%;
+    background-size: 25%;
+    top: 0;
+    left: 0;
+}
+
+#reservation {
+    position: relative
+}
+
+.reserve-book-btn {
+    margin: 42px 0 65px;
+}
+
+.reservation-block .form-box input::-webkit-input-placeholder {
+    color: #717171;
+    opacity: 1;
+}
+
+.reservation-block .form-box input:-moz-placeholder {
+    color: #717171;
+    opacity: 1;
+}
+
+.reservation-block .form-box input::-moz-placeholder {
+    color: #717171;
+    opacity: 1;
+}
+
+.reservation-block .form-box input:-ms-input-placeholder {
+    color: #717171;
+    opacity: 1;
+}
+
+
+/* ===================================
+    15. Footer CSS
+====================================== */
+
+.footer-block {
+    display: inline-block;
+    background-image: url(../images/footer-bg.png);
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+.footer-block:before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.79);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer-title {
+    color: #e75b1e;
+    letter-spacing: 0.96px;
+    margin-bottom: 22px;
+    font-family: 'Playball', cursive;
+}
+
+.footer-title.color-white {
+    color: #fff;
+}
+
+.footer-block ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.footer-block ul li a {
+    color: #fff;
+}
+
+.footer-block ul li {
+    letter-spacing: 0.84px;
+    line-height: 30px;
+}
+
+.footer-block ul li a:hover {
+    color: #e75b1e;
+}
+
+.footer-block h6 {
+    margin-bottom: 13px;
+}
+
+.footer-block input[type=email] {
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.09);
+    border-radius: 0;
+    height: 51px;
+    padding: 5px 20px;
+    font-weight: 500;
+    color: #717171;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.footer-block input[type=email]:focus {
+    border: 2px solid #e75b1e;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.footer-block .orange-btn {
+    padding: 0px 19px;
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: inherit;
+    height: 51px;
+    line-height: 51px;
+}
+
+.footer-section {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.footer-block .contact-us i.fa {
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    float: left;
+    min-width: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-block ul li span,
+.footer-block ul li a {
+    display: table;
+    padding-left: 12px;
+}
+
+.footer-block .contact-us ul li {
+    margin-bottom: 10px;
+}
+
+.footer-block .contact-us ul li:last-child {
+    margin-bottom: 0;
+}
+
+.newsletter form {
+    position: relative;
+    width: 485px;
+    margin: 0 auto;
+}
+
+.newsletter p {
+    margin-bottom: 33px;
+    font-size: 16px;
+}
+
+.footer-content {
+    display: inline-block;
+    width: 100%;
+    margin: 93px 0 64px;
+}
+
+.footer-content .footer-title {
+    font-size: 34px;
+    text-transform: capitalize;
+}
+
+.opening-hours i.fa {
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    float: left;
+    min-width: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.opening-hours h6 span {
+    display: table;
+    padding-left: 10px;
+    letter-spacing: 0.86px;
+}
+
+.footer-block .new-on-menu ul li:before {
+    content: '\f105';
+    display: inline-block;
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    top: -1px;
+    left: 0;
+}
+
+.footer-block .new-on-menu ul li {
+    position: relative;
+}
+
+.newsletter .side-img.right-side-img,
+.reservation-block .side-img.right-side-img {
+    margin-left: 18px;
+}
+
+
+/* ===================================
+    16. Copyright CSS
+====================================== */
+
+.copyright-block {
+    border-top: 2px dotted #fff;
+}
+
+.copyright-block .copy-title {
+    text-transform: uppercase;
+    letter-spacing: 0.84px;
+    padding: 11px 0 26px;
+    margin: 0;
+}
+
+
+.copy-title a {
+    color: #fff;
+}
+
+.copy-title a:hover {
+    color: #e75b1e;
+}
+
+
+/* ===================================
+    17. Back To Top CSS
+====================================== */
+
+.back-to-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: -30px;
+    right: 30px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #e75b1e;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    text-align: center;
+    line-height: 40px;
+}
+
+.back-to-top:hover,
+.back-to-top:focus,
+.back-to-top:active {
+    background-color: #040404;
+}
+
+.back-to-top i {
+    color: #fff;
+    font-size: 16px;
+}
+
+.back-to-top.cd-is-visible {
+    visibility: visible;
+    opacity: 1;
+    bottom: 30px;
+}
+
+.back-to-top.cd-is-visible,
+.back-to-top.cd-fade-out,
+.no-touch .back-to-top:hover {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+
+/* ===================================
+    18. Blog Page CSS
+====================================== */
+
+.inner-banner {
+    height: 450px;
+    display: inline-block;
+    background-image: url(../images/banner.jpg);
+    background-position: center top;
+    background-size: cover;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding-top: 70px;
+    vertical-align: top;
+}
+/* 
+.inner-banner .container,
+.inner-banner .container .col-xs-12 {
+    height: 100%;
+} */
+
+.blog-box.blog-box-img {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+}
+
+.blog-list-info {
+    display: inline-block;
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    border: 10px solid #eaeaea;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.blog-list-box {
+    margin-top: 55px;
+}
+
+.blog-list-box:first-child,
+.blog-list-box:nth-child(2) {
+    margin-top: 0;
+}
+
+
+/* ===================================
+    19. Blog Detail Page CSS
+====================================== */
+
+.blog-detail .blog-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+/* sidebar */
+
+.widget {
+    padding: 25px 20px;
+    background-color: #fff;
+    margin-bottom: 55px;
+    border: 10px solid #eaeaea;
+}
+
+.widget:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar .widget-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: #040404;
+}
+
+.sidebar .widget_search .widget-title {}
+
+.widget_search {}
+
+.widget_search form {
+    position: relative;
+}
+
+.widget_search form input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    padding: 5px 60px 5px 20px;
+    font-size: 14px;
+    color: #737373;
+    font-style: italic;
+    background-color: #fbfbfb;
+    border: 2px solid #eaeaea;
+}
+
+
+
+.widget_search form button {
+    background-color: #1e1e1e;
+    border: 0;
+    color: #fff;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.widget_search form button:hover {
+    background-color: #e75b1e;
+}
+
+.widget_recent_entries img {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+.widget_recent_entries .bpost {
+    display: table;
+    padding-left: 15px;
+}
+
+.widget_recent_entries .bpost h5 {
+    text-transform: uppercase;
+    color: #1e1e1e;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 11px;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    font-weight: 900;
+}
+
+.widget_recent_entries .bpost span {
+    font-size: 11px;
+    color: #1e1e1e;
+    text-transform: uppercase;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.widget_recent_entries ul li a:hover h5 {
+    color: #ed804a;
+}
+
+.widget_recent_entries ul li {
+    margin-bottom: 35px;
+    display: inline-block;
+    width: 100%;
+}
+
+.widget_recent_entries ul li:last-child {
+    margin-bottom: 0;
+}
+
+.widget .tagcloud a {
+    padding: 5px 19px;
+    display: inline-block;
+    margin: 0 0 10px 5px;
+    background-color: #e75b1e;
+    color: #fff;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1.12px;
+}
+
+.widget .tagcloud a:hover {
+    background-color: #201f1f !important;
+    color: #fff !important;
+}
+
+.widget_recent_entries ul {
+    padding: 0;
+    list-style: none;
+}
+
+blockquote {
+    background-color: #fbfbfb;
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    border-left: 3px solid #e75b1e;
+}
+
+blockquote p {
+    font-style: italic;
+}
+
+blockquote h6 {
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #e75b1e;
+    font-weight: 600;
+    letter-spacing: 0.96px;
+}
+
+
+/* social icons */
+
+/* blog comment */
+
+.blog-comment {
+    display: inline-block;
+    width: 100%;
+    padding-right: 20px;
+    padding: 40px 40px 0;
+    vertical-align: top;
+}
+
+.blog-comment .comment-avtar {
+    float: left;
+    max-width: 90px;
+    margin-right: 25px;
+}
+
+.comment-text p {
+    font-style: italic;
+    color: #737373;
+}
+
+.comment-text .comment-date {
+    color: #737373;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-style: normal;
+}
+
+.comment-date a {
+    color: #1e1e1e;
+    font-size: 16px;
+    font-weight: 900;
+    position: relative;
+    margin-right: 10px;
+}
+
+.comment-date a:hover {
+    color: #e75b1e;
+}
+
+.blog-comment > .blog-comment {
+    padding: 25px 0 0 120px;
+}
+
+.comment-text {
+    position: relative;
+    display: table;
+}
+
+.comment-date .comment-reply {
+    float: right;
+    font-size: 14px;
+    color: #e75b1e;
+    font-weight: 600;
+    margin: 0;
+}
+
+.comment-date .comment-reply:hover {
+    color: #1e1e1e;
+}
+
+.blog-comment > .blog-comment .blog-comment {
+    padding-left: 0;
+}
+
+.blog-comment-main > .blog-comment:last-child {
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 40px;
+}
+
+.blog-comment-form-main {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.blog-comment-form .form-Box .fill-btn {
+    width: 252px;
+}
+
+.inner-blog-section {
+    margin-top: 55px;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    border: 10px solid #eaeaea;
+    vertical-align: top;
+}
+
+.comment-text p:last-of-type {
+    margin: 0;
+}
+
+.form-Box input[type=text], .form-Box input[type=email], .form-Box input[type=passowrd], .form-Box textarea {
+    width: 100%;
+    border: 2px solid #eaeaea;
+    height: 61px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #717171;
+    letter-spacing: 0.224px;
+    padding: 5px 30px;
+    border-radius: 0;
+    opacity: 1;
+    position: relative;
+    vertical-align: top;
+}
+
+.form-Box textarea {
+    height: 150px;
+    padding: 20px 30px;
+}
+
+.form-Box {
+    margin-bottom: 25px;
+}
+
+.comment-btn .orange-btn {
+    background: #e75b1e;
+    border: 2px solid transparent;
+}
+
+.comment-btn .orange-btn:hover {
+    background-color: transparent;
+    border-color: #e75b1e;
+}
+
+
+
+/* ===================================
+    20. 404 page CSS
+====================================== */
+.error-box h1 {
+    font-family: 'Galada', cursive;
+    letter-spacing: 2.7px;
+    position: relative;
+    display: inline-block;
+    color: #e75b1e;
+    font-weight: bold;
+}
+
+.error-box h2 {
+    font-size: 39px;
+    color: #555555;
+    font-weight: 300;
+}
+
+.error-box h3 {
+    color: #555555;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.error-search input {
+    border: 2px solid #eaeaea;
+    height: 61px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #717171;
+    letter-spacing: 0.224px;
+    padding: 5px 35px 5px 30px;
+    border-radius: 0;
+    opacity: 1;
+    position: relative;
+    width: 100%;
+}
+
+.error-search .e-search-icon {
+    position: absolute;
+    font-size: 20px;
+    color: #dad9d9;
+    right: 16px;
+    top: 17px;
+}
+
+.error-search {
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    margin-top: 35px;    
+    max-width: 100%;
+}
+
+.error-search .e-search-icon:hover {
+    color: #e75b1e;
+}
+
+
+
+/* ===================================
+    21. 404 page CSS
+====================================== */
+.element-title {
+    text-transform: uppercase;
+    color: #040404;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.e_lists {
+    display: inline-block;
+    width: 100%;
+}
+.element-inn {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.e_lists li {
+    line-height: normal;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table,
+td,
+th {
+    border: 1px solid #c3c3c3;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 8px;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #e8e8e8;
+}
+
+.ellipsis {
+  overflow: hidden;
+  position: relative;
+  height: 113px;
+  /* line-height: 25px; */
+  /* margin: 20px; */
+  /* border: 5px solid #AAA; */
+  }
+
+.ellipsis:before {
+    content:"";
+    float: left;
+    width: 5px;
+    height: 113px;
+    }
+
+.ellipsis > *:first-child {
+    float: right;
+    width: 100%;
+    margin-left: -5px;
+    /* height: 113px; */
+    /* overflow: hidden; */
+    }       
+.ellipsis div p{
+    height: 113px;
+}
+
+
+.ellipsis a {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 105px;
+    /* height: 100%; */
+    overflow: hidden;
+    text-indent: -9999px;
+    z-index: 9;
+    }
+.ellipsis i, .ellipsis:after {
+    font-style: normal;
+    color: #ccc;
+    }
+
+.ellipsis i:before { content: "Read More";}
+
+.ellipsis:after {
+    content: "...";
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    float: right;
+    position: relative;
+    top: -28px;
+    left: 100%;
+    width: 15px;
+    margin-left: -15px;
+    padding-right: 5px;
+    text-align: left;
+    }
+
+
+
+
+
+
+
+
+
+/* Default styles for the side menu container */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Push it off-screen initially */
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s ease-in-out;
+}
+
+/* Default styles for the menu items */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    padding: 10px;
+    text-align: center;
+    color: white; /* Text color */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.2s ease; /* Add smooth hover effect */
+}
+
+.menu-items li:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+
+
+
+
+
+
+.custom-toggler {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    background-color: transparent; /* Remove button background color */
+    border: none; /* Remove button border */
+}
+
+.custom-toggler .line {
+    display: block;
+    width: 30px; /* Adjust line width as needed */
+    height: 3px; /* Adjust line height as needed */
+    background-color: #333; /* Line color */
+    margin: 6px auto; /* Spacing between lines */
+}
+
+
+
+/* team members */
+
+/* Add your custom CSS styles to your-css-file.css */
+/* Add your custom CSS styles to your-css-file.css */
+
+/* Style the team section */
+.team-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Adjust color as needed */
+}
+
+/* Style team member containers */
+.team-member {
+    background-color: #fff;
+    padding: 15px; /* Reduce padding to make the container smaller */
+    border-radius: 10px; /* Reduce border radius for a smaller container */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+
+/* Style team member images */
+.team-member-image img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #fff; /* Add a border to the images */
+    width: 200px; /* Increase the image width */
+    height: 200px; /* Increase the image height */
+    background-size: cover; /* Cover the entire container */
+}
+
+/* Style team member names */
+.team-member-name {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 400;
+    letter-spacing: 1.6px;
+    font-family: 'Poppins', sans-serif;
+
+    color: #333; /* Adjust color as needed */
+}
+
+/* Style team member titles */
+.team-member-title {
+    font-size: 16px;
+    color: #777; /* Adjust color as needed */
+
+    font-family: sans-serif;
+}
+
+/* Style team member descriptions */
+.team-member-description {
+    font-size: 14px;
+    color: #666; /* Adjust color as needed */
+
+    font-family: sans-serif;
+}
+
+/* Style LinkedIn logo */
+.linkedin-logo {
+    position: absolute;
+    top: 10px; /* Adjust the top position for desired spacing */
+    right: 20px; /* Adjust the right position for desired spacing */
+    width: 30px; /* Adjust the width of the logo */
+    height: 30px; /* Adjust the height of the logo */
+}
+
+
+.social-media-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.social-icon {
+    flex-basis: 13%; /* Adjust the width of each column as needed */
+    text-align: center; /* Center the icons */
+    margin-bottom: 10px; /* Adjust the spacing between icons vertically */
+}
+
+
+
+/* 
+
+events styles */
+
+
+header h1 {
+    font-size: 136px;
+    font-family: 'Poppins', sans-serif;
+   
+
+    
+}
+
+/* Add this CSS to set the background of the section to yellow */
+.eventback{
+    background-color: yellow;
+    color: #000; /* Text color (black) */
+    border: 1px solid #e75b1e;; /* Pink border */
+    /* You can adjust the background color as needed */
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    header  h1 {
+        font-size: 50px; /* Reduce font size for smaller screens */
+           
+    padding: 5px;
+    }
+}
+
+header h2 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+header h3 {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.event-image {
+    text-align: center;
+    margin: 20px 0;
+}
+.event-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+li {
+    font-size: 16px;
+    color: #555;
+}
+
+button.btn-primary:hover {
+    background-color: #d34717;
+}
+
+/* Countdown timer */
+.countdown {
+    text-align: center;
+    margin: 50px 0;
+}
+.countdown h2 {
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+.countdown-timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e75b1e;
+}
+
+/* Speaker section */
+.speakers {
+    margin-top: 20px;
+}
+.speaker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.speaker img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.speaker-details {
+    flex-grow: 1;
+}
+
+/* Registration section */
+.registration {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Contact section */
+.contact {
+    text-align: center;
+    padding: 20px;
+}
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+.contact li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Styles for the event date */
+.event-date {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e75b1e;
+    margin-top: 10px;
+}
+
+
+.event-details h2 {
+    font-size: 28px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.event-details p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; /* Change the font size */
+    line-height: 1.6;
+    color: #777; /* Change the font color */
+}

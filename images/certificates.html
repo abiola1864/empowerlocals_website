@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate for <span id="recipientName"></span></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script> <!-- QRious library -->
+<style>
+    body {
+        font-family: 'Arial', sans-serif; /* Change to your desired font family */
+        text-align: justify;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+    .certificate {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+    h1 {
+        font-size: 48px; /* Increased font size */
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-family: 'Garamond', serif; /* Change to your desired font family */
+    }
+    .recipient-title {
+        font-size: 36px; /* Larger font size for recipient title */
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-family: 'Garamond', serif; /* Change to your desired font family */
+    }
+    p {
+        font-size: 20px;
+        margin: 10px 0;
+        font-family: 'Garamond', serif; /* Change to your desired font family */
+    }
+    strong {
+        font-weight: bold;
+    }
+    .module {
+        font-style: italic;
+        margin-bottom: 5px;
+        color: #666;
+        font-family: 'Garamond', serif; /* Change to your desired font family */
+    }
+    #currentDate {
+        font-weight: bold;
+        color: #007bff;
+    }
+    .branding {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .branding img {
+        max-width: 200px;
+    }
+    .qr-code {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+    .qr-code canvas {
+        max-width: 100px; /* Adjust the size of the QR code */
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div class="certificate">
+    <div class="branding">
+        <img src="images/logo.png" alt="Organization Logo"> <!-- Replace 'logo.png' with your organization's logo -->
+    </div>
+    <h1>Certificate</h1>
+    <h2 class="recipient-title"><span id="recipientName"></span></h2>
+    <p><strong>Empowerment for Local People Foundation</strong> has awarded this certificate to <span id="recipientFullName"></span> on <strong>13 March</strong> for the successful completion of the course "<strong>Foundation to Record Keeping in Small Businesses 1.0</strong>".</p>
+    <p>Modules include:</p>
+    <div class="module">- <strong>Introduction to record keeping concepts</strong> (profits, loss, cashbook etc.)</div>
+    <div class="module">- <strong>Best practices in record keeping</strong></div>
+    <div class="module">- <strong>Introduction to digital record keeping</strong></div>
+    <p>This digital certificate was generated on: <span id="currentDate"></span></p>
+    <div class="qr-code">
+        <canvas id="qrCodeCanvas"></canvas>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    // Function to format the date
+    function formatDate(date) {
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+
+    // Function to extract names from the Google Sheets API response
+    function extractNames(data) {
+        return data.values.map(function(row) {
+            return row[0];
+        });
+    }
+
+    // Fetch data from Google Sheets API
+    $.ajax({
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1Wf-0tNXnASISKCbHy0RMKtPVoS8Wgts4rluPM-mOLkA/values/Sheet1!A:A?key=AIzaSyCq9l2N2mxxLdaPb0Kq4ALI7FxVJf8FKsk',
+        dataType: 'json',
+        success: function(data) {
+            var name = getUrlParameter('name');
+            var names = extractNames(data);
+            if (names.includes(name)) {
+                $("#recipientName").text(name);
+                $("#recipientFullName").text(name);
+                generateQRCode(name);
+            } else {
+                $("#recipientName").text("Recipient not found");
+                $("#recipientFullName").text("Recipient not found");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+            $("#recipientName").text("Error loading recipient's name");
+            $("#recipientFullName").text("Error loading recipient's name");
+        }
+    });
+
+    // Function to generate QR code
+    function generateQRCode(name) {
+        var qr = new QRious({
+            element: document.getElementById('qrCodeCanvas'),
+            value: 'https://www.empowerlocals.org/certificates.html?name=' + encodeURIComponent(name),
+            size: 200
+        });
+    }
+
+    // Function to get URL parameter
+    function getUrlParameter(name) {
+        var urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Display current date
+    var currentDate = new Date();
+    $("#currentDate").text(formatDate(currentDate));
+});
+</script>
+
+</body>
+</html>

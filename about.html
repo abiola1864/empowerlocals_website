@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Empowerment for Local People Foundation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #e75b1e 0%, #ff8f53 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .mission-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #e75b1e;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #e75b1e;
+            border: 4px solid #ff9f55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item.left {
+            left: 0;
+        }
+        
+        .timeline-item.right {
+            left: 50%;
+        }
+        
+        .timeline-item.right::after {
+            left: -16px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item.right {
+                left: 0%;
+            }
+            
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center text-white" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Empowering Local Businesses</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">Eliminating inefficiencies in local businessess through technology, knowledge, and sustainable business practices since 2018</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="mission-card p-8 bg-gray-50 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4 text-gradient">Our Vision</h3>
+                    <p class="text-gray-600">A vibrant local economy where small businesses have access to knowledge and technology that eliminates inefficiencies, driving economic progress and positive social impact in remote communities.</p>
+                </div>
+                <div class="mission-card p-8 bg-gray-50 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4 text-gradient">Our Mission</h3>
+                    <p class="text-gray-600">Supporting small businesses with data-driven research, innovative technology, and essential tools for success, creating a culture of learning and collaboration.</p>
+                </div>
+                <div class="mission-card p-8 bg-gray-50 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold mb-4 text-gradient">Our Beneficiaries</h3>
+                    <p class="text-gray-600">Serving entrepreneurs with an average age of 36, majority being women (58%), and a median daily profit of ₦20,000 ($12).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gradient" data-aos="fade-up">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">2017: Foundation</h3>
+                        <p>Established with a vision to empower micro-businesses in Nigeria</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">2018: Official Registration</h3>
+                        <p>Registered with CAC as a limited trustee, began formal operations</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">2019: Expansion</h3>
+                        <p>Launched comprehensive training programs and built a network of 30+ volunteers</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Present Day</h3>
+                        <p>8,000+ businesses trained, AI-powered mentoring platform launched, partnerships with major institutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gradient" data-aos="fade-up">Key Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-gray-50 rounded-lg shadow-lg" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">Training & Education</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>• Trained 8,000+ small firms across Lagos</li>
+                        <li>• Developed 98-page comprehensive SME Digest</li>
+                        <li>• Created specialized training modules for marginalized firms</li>
+                        <li>• 87% of graduates achieved scores of 70% or higher</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-lg" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">Innovation & Partnership</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>• Launched EmpowerBot AI mentoring platform</li>
+                        <li>• Partnership with LSETF achieving 96% recommendation rate</li>
+                        <li>• Research collaborations with IGC, PEDL, and CEGA</li>
+                        <li>• Perfect 50/50 gender balance in programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">Join Our Mission</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Help us create lasting change and empower local communities to thrive through sustainable business practices and innovation.
+            </p>
+            <div class="flex justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                    Partner With Us
+                </a>
+                <a href="#" class="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

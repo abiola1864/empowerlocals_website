@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate for <span id="recipientName"></span></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'League Spartan', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .certificate {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        width: 1000px;
+        height: 700px;
+        margin: auto;
+        padding: 20px 30px 30px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+    .logo-container {
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    .logo-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .logo {
+        max-height: 45px;
+        width: auto;
+    }
+    .content-row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .main-content {
+        text-align: center;
+    }
+    .side-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .date-awarded {
+        margin-top: 30px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 42px;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+    .recipient-name {
+        font-size: 32px;
+        color: #eb5d20;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    .highlight {
+        color: #eb5d20;
+        font-weight: bold;
+    }
+    .course-info {
+        margin: 20px 0;
+    }
+    .signature-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        align-items: flex-end;
+    }
+    .signature {
+        text-align: center;
+        padding: 10px;
+        width: 150px;
+    }
+    .signature-content {
+        height: 50px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .signature-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        opacity: 0.7;
+    }
+    .signature-stylized {
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+        color: #2c3e50;
+        opacity: 0.7;
+        transform: rotate(-5deg);
+    }
+    .signature-line {
+        width: 100%;
+        border-top: 1px solid #000;
+        margin: 10px auto;
+    }
+    .qr-code {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .qr-code canvas {
+        max-width: 80px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .button-container { position: absolute; bottom: 60px; right: 20px; }
+    .download-button {
+        background-color: #eb5d20;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'League Spartan', sans-serif;
+        transition: background-color 0.3s ease;
+    }
+    .download-button:hover {
+        background-color: #d04d1a;
+    }
+    .download-date {
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
+        .certificate {
+            padding: 30px 50px 50px;
+        }
+        .logo {
+            max-height: 55px;
+        }
+        .content-row {
+            flex-direction: row;
+            gap: 50px;
+        }
+        .main-content {
+            flex: 3;
+            text-align: left;
+        }
+        .side-content {
+            flex: 1;
+        }
+        h1 {
+            font-size: 48px;
+        }
+        .recipient-name {
+            font-size: 38px;
+        }
+        p {
+            font-size: 20px;
+        }
+        .signature {
+            width: 250px;
+        }
+        .signature-content {
+            height: 80px;
+        }
+        .signature-stylized {
+            font-size: 32px;
+        }
+        .qr-code canvas {
+            max-width: 150px;
+        }
+        .button-container {
+            text-align: right;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="certificate" id="certificate">
+    <div class="logo-container">
+        <div class="logo-row">
+            <img src="images/logo.png" alt="ELP Logo" class="logo">
+            <img src="lsetf.png" alt="LSETF Logo" class="logo">
+        </div>
+    </div>
+    <div class="content-row">
+        <div class="main-content">
+            <h1>Certificate of Completion</h1>
+            <p>This is to certify that</p>
+            <p class="recipient-name" id="recipientName"></p>
+            <p>has successfully completed the intensive 4-week course:</p>
+            <p class="course-info">
+                <span class="highlight">Bookkeeping in Business: Theory and Practice</span><br>
+                offered by the <span class="highlight">Empowerment for Local People Foundation.</span>
+            </p>
+            <div class="signature-row">
+                <div class="signature">
+                    <div class="signature-content">
+                        <div class="signature-stylized">Adebisi Nofiu</div>
+                    </div>
+                    <div class="signature-line"></div>
+                    <p>ADEBISI Nofiu</p>
+                    <p>Trainer</p>
+                </div>
+                <div class="signature">
+                    <div class="signature-content">
+                        <img src="Sign1.png" alt="Signature 2" class="signature-image">
+                    </div>
+                    <div class="signature-line"></div>
+                    <p>TOBI-AYEGUN Oluwayomi</p>
+                    <p>Project Manager</p>
+                </div>
+            </div>
+        </div>
+        <div class="side-content">
+            <div class="date-awarded">
+                <p>Date Awarded:</p>
+                <p class="highlight">August 29, 2024</p>
+            </div>
+            <div class="qr-code">
+                <canvas id="qrCodeCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="download-button" onclick="downloadPDF()">Download Certificate</button>
+    </div>
+    <p class="download-date" id="downloadDate"></p>
+</div>
+<script>
+$(document).ready(function() {
+    function extractNames(data) {
+        return data.values.map(function(row) {
+            return row[0];
+        });
+    }
+
+    // Fetch data from Google Sheets API
+    $.ajax({
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1Wf-0tNXnASISKCbHy0RMKtPVoS8Wgts4rluPM-mOLkA/values/Sheet6!A:A?key=AIzaSyCq9l2N2mxxLdaPb0Kq4ALI7FxVJf8FKsk',
+        dataType: 'json',
+        success: function(data) {
+            var name = getUrlParameter('name');
+            var names = extractNames(data);
+            if (names.includes(name)) {
+                $("#recipientName").text(name);
+                generateQRCode(name);
+
+                // Check if we should automatically download
+                if (getUrlParameter('download') === 'true') {
+                    downloadPDF();
+                }
+            } else {
+                $("#recipientName").text("Recipient not found");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+            $("#recipientName").text("Error loading recipient's name");
+        }
+    });
+
+    function generateQRCode(name) {
+        var qr = new QRious({
+            element: document.getElementById('qrCodeCanvas'),
+            value: 'https://www.empowerlocals.org/certificates_elp_lseft_2024.html?name=' + encodeURIComponent(name),
+            size: 150
+        });
+    }
+});
+
+function downloadPDF() {
+    var element = document.getElementById('certificate');
+    var downloadButton = document.querySelector('.download-button');
+    var downloadDateElement = document.getElementById('downloadDate');
+    var recipientName = document.getElementById('recipientName').textContent;
+
+    // Hide the download button
+    if (downloadButton) {
+        downloadButton.style.display = 'none';
+    }
+
+    // Add current date to the certificate
+    var currentDate = new Date();
+    var formattedDate = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    downloadDateElement.textContent = 'Downloaded on: ' + formattedDate;
+    downloadDateElement.style.display = 'block';
+
+    var opt = {
+        margin: 0,
+        filename: recipientName + '_certificate.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+    };
+
+    html2pdf().from(element).set(opt).save().then(function() {
+        // Show the download button again after PDF generation
+        if (downloadButton) {
+            downloadButton.style.display = 'block';
+        }
+        // Hide the download date again
+        downloadDateElement.style.display = 'none';
+
+        // If this was an automatic download, close the window
+        if (getUrlParameter('download') === 'true') {
+            window.close();
+        }
+    });
+}
+
+function getUrlParameter(name) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+</script>
+</body>
+</html>

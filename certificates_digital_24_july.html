@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate for <span id="recipientName"></span></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script> <!-- QRious library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> <!-- html2pdf library -->
+
+<!-- Link to Google Fonts for fancier font styles -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif; /* Change to your desired font family */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+    .certificate {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+    h1, h2 {
+        font-size: 48px; /* Increased font size */
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-family: 'Roboto', sans-serif; /* Modern font for the title */
+    }
+    .recipient-title {
+        font-size: 36px; /* Larger font size for recipient title */
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-family: 'Great Vibes', cursive; /* Fancy font for recipient name */
+    }
+    p {
+        font-size: 20px;
+        margin: 2px 0;
+        font-family: 'Roboto', sans-serif; /* Change to your desired font family */
+        line-height: 1; /* Adjust line height for better spacing */
+    }
+    strong {
+        font-weight: bold;
+    }
+    .module-box {
+        background-color: #f9f9f9; /* Module box background color */
+        padding: 10px;
+        margin-bottom: 20px; /* Increased margin bottom */
+        border-radius: 5px;
+    }
+    .module {
+        font-style: italic;
+        margin-bottom: 5px;
+        color: #666;
+        font-family: 'Roboto', sans-serif; /* Change to your desired font family */
+    }
+    .module ul {
+        list-style-type: disc; /* Use disc bullet points */
+        padding-left: 20px; /* Adjust left padding for bullet points */
+    }
+    #currentDate {
+        font-weight: bold;
+        color: #007bff;
+    }
+    .branding {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .branding img {
+        max-width: 200px;
+    }
+    .qr-code {
+        position: absolute;
+        bottom: 20px; /* Adjust position */
+        right: 20px; /* Adjust position */
+    }
+    .qr-code canvas {
+        max-width: 100px; /* Adjust the size of the QR code */
+        height: auto;
+    }
+    .download-button {
+        position: absolute;
+        top: 20px;
+        right: 150px;
+        background-color:#DD4F07;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif; /* Change to your desired font family */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+    .download-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="certificate" id="certificate">
+    <div class="branding">
+        <img src="images/logo.png" alt="Organization Logo"> <!-- Replace 'logo.png' with your organization's logo -->
+    </div>
+    <h1>Course Certificate</h1>
+    <h2 class="recipient-title"><span id="recipientName"></span></h2>
+    <p><strong>Empowerment for Local People Foundation</strong> has awarded this certificate to <span id="recipientFullName"></span> on <strong>18 July, 2024</strong> for the successful completion of the course "<strong>Digital Marketing and the Use of Platforms to Drive Sales</strong>".</p>
+    <div class="module-box">
+        <p><strong>Modules include:</strong></p>
+        <ul>
+            <li>Introduction to digital marketing concepts</li>
+            <li>Effective use of social media for sales</li>
+            <li>Optimizing digital platforms: WhatsApp, Instagram, Facebook, & TikTok</li>
+            <li>Making businesses visible online via Google My Business</li>
+        </ul>
+    </div>
+    <p>This digital certificate was</p>
+    <p>generated on</p>
+    <p><span id="currentDate"></span></p>
+    <div class="qr-code">
+        <canvas id="qrCodeCanvas"></canvas>
+    </div>
+</div>
+<button class="download-button" onclick="downloadPDF()">Download Certificate</button>
+
+<script>
+$(document).ready(function() {
+    // Function to format the date
+    function formatDate(date) {
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+
+    // Function to extract names from the Google Sheets API response
+    function extractNames(data) {
+        return data.values.map(function(row) {
+            return row[0];
+        });
+    }
+
+    // Fetch data from Google Sheets API
+    $.ajax({
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1Wf-0tNXnASISKCbHy0RMKtPVoS8Wgts4rluPM-mOLkA/values/Sheet3!A:A?key=AIzaSyCq9l2N2mxxLdaPb0Kq4ALI7FxVJf8FKsk',
+        dataType: 'json',
+        success: function(data) {
+            var name = getUrlParameter('name');
+            var names = extractNames(data);
+            if (names.includes(name)) {
+                $("#recipientName").text(name);
+                $("#recipientFullName").text(name);
+                generateQRCode(name);
+            } else {
+                $("#recipientName").text("Recipient not found");
+                $("#recipientFullName").text("Recipient not found");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error(status, error);
+            $("#recipientName").text("Error loading recipient's name");
+            $("#recipientFullName").text("Error loading recipient's name");
+        }
+    });
+
+    // Function to generate QR code
+    function generateQRCode(name) {
+        var qr = new QRious({
+            element: document.getElementById('qrCodeCanvas'),
+            value: 'https://www.empowerlocals.org/certificates_digital_24_july.html?name=' + encodeURIComponent(name),
+            size: 200
+        });
+    }
+
+    
+
+    // Function to get URL parameter
+    function getUrlParameter(name) {
+        var urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Display current date
+    var currentDate = new Date();
+    $("#currentDate").text(formatDate(currentDate));
+});
+
+// Function to download the certificate as PDF
+function downloadPDF() {
+    var element = document.getElementById('certificate');
+    var opt = {
+        margin:       1,
+        filename:     'certificate.pdf',
+        image:        { type: 'jpeg', quality: 1.0 },
+        html2canvas:  { scale: 4 }, // Adjust the scale for better quality
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().from(element).set(opt).save();
+}
+</script>
+</body>
+</html>

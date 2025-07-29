@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate for <span id="recipientName"></span></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'League Spartan', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .certificate-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .certificate {
+        position: relative;
+        width: 1000px;
+        height: 680px;
+        padding: 15px 25px 25px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+    .logo-container {
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+    .logo-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .logo {
+        max-height: 45px;
+        width: auto;
+    }
+    .content-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-content {
+        text-align: center;
+    }
+    .side-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .date-awarded {
+        margin-top: 20px;
+        text-align: center;
+        padding: 8px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    h1 {
+        font-size: 40px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+    .recipient-name {
+        font-size: 30px;
+        color: #eb5d20;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 17px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+    .highlight {
+        color: #eb5d20;
+        font-weight: bold;
+    }
+    .course-info {
+        margin: 15px 0;
+    }
+    .signature-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        align-items: flex-end;
+    }
+    .signature {
+        text-align: center;
+        padding: 8px;
+        width: 150px;
+    }
+    .signature-content {
+        height: 45px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .signature-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        opacity: 0.7;
+    }
+    .signature-stylized {
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+        color: #2c3e50;
+        opacity: 0.7;
+        transform: rotate(-5deg);
+    }
+    .signature-line {
+        width: 100%;
+        border-top: 1px solid #000;
+        margin: -5px auto;
+    }
+    .qr-code {
+        text-align: center;
+        margin-top: 15px;
+        padding: 8px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .qr-code canvas {
+        max-width: 90px;
+        height: auto;
+        display: block;
+        margin: 5px auto;
+    }
+    .qr-label {
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+    .button-container { 
+        position: fixed; 
+        bottom: 20px; 
+        left: 0; 
+        right: 0;
+        text-align: center;
+        z-index: 1000;
+    }
+    .download-button {
+        background-color: #eb5d20;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'League Spartan', sans-serif;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .download-button:hover {
+        background-color: #d04d1a;
+    }
+    .download-date {
+        font-size: 10px;
+        color: #666;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .error-message {
+        color: #e74c3c;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #fdf2f2;
+        border: 1px solid #e74c3c;
+        border-radius: 5px;
+    }
+    .debug-info {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 12px;
+        color: #6c757d;
+    }
+
+    @media (min-width: 768px) {
+        .certificate {
+            padding: 25px 40px 40px;
+        }
+        .logo {
+            max-height: 50px;
+        }
+        .content-row {
+            flex-direction: row;
+            gap: 40px;
+        }
+        .main-content {
+            flex: 3;
+            text-align: left;
+        }
+        .side-content {
+            flex: 1;
+        }
+        h1 {
+            font-size: 44px;
+        }
+        .recipient-name {
+            font-size: 34px;
+        }
+        p {
+            font-size: 18px;
+        }
+        .signature {
+            width: 260px;
+        }
+        .signature-content {
+            height: 70px;
+        }
+        .signature-stylized {
+            font-size: 28px;
+        }
+        .qr-code canvas {
+            max-width: 130px;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            left: auto;
+            text-align: right;
+        }
+    }
+    
+    @media print {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .certificate-wrapper {
+            padding: 0;
+        }
+        .certificate {
+            margin: 0 auto;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        .debug-info {
+            display: none;
+        }
+    }
+
+    .loading-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+    }
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #eb5d20;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+<div class="certificate-wrapper">
+    <div class="certificate" id="certificate">
+        <div class="logo-container">
+            <div class="logo-row">
+                <img src="lsetf.png" alt="LSETF Logo" class="logo">
+                <img src="images/logo.png" alt="ELP Logo" class="logo">
+            </div>
+        </div>
+        <div class="content-row">
+            <div class="main-content">
+                <h1>Certificate of Completion</h1>
+                <p>This is to certify that</p>
+                <p class="recipient-name" id="recipientName"></p>
+                <p>has successfully completed the intensive 3-week MSME Bootcamp on</p>
+                <p class="course-info">
+                    <span class="highlight">Business Structure</span><br>
+                    <span class="highlight">Operational Management </span><br>
+                    <span class="highlight">Digital Marketing </span><br>
+                </p>
+                <p class="course-info">
+                    offered by the <span class="highlight"> Lagos State Employment Trust Fund</span>
+                    <span> and the </span> <span class="highlight"> Empowerment for Local People Foundation.</span>
+                </p>
+                <div class="signature-row">
+                    <div class="signature">
+                        <div class="signature-content">
+                            <div class="signature-stylized">Eric-Sobukonla</div>
+                        </div>
+                        <div class="signature-line"></div>
+                        <p> Oluwafunmilayo Eric-Sobukonla</p>
+                        <p>Head, Business Support Unit, LSETF</p>
+                    </div>
+                    <div class="signature">
+                        <div class="signature-content">
+                            <img src="Sign1.png" alt="Signature 2" class="signature-image">
+                        </div>
+                        <div class="signature-line"></div>
+                        <p>TOBI-AYEGUN Oluwayomi</p>
+                        <p>Course Coordinator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="side-content">
+                <div class="date-awarded">
+                    <p>Date Awarded:</p>
+                    <p class="highlight" id="awardDate">25 June, 2025</p>
+                </div>
+                <div class="qr-code">
+                    <p class="qr-label">Certificate Verification</p>
+                    <canvas id="qrCodeCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Debug information (will be hidden in production) -->
+        <div class="debug-info" id="debugInfo" style="display: none;">
+            <strong>Debug Information:</strong><br>
+            <span id="debugContent"></span>
+        </div>
+        
+        <div class="button-container">
+            <button class="download-button" onclick="downloadPDF()">Download Certificate</button>
+        </div>
+        <p class="download-date" id="downloadDate"></p>
+    </div>
+</div>
+
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+</div>
+
+<script>
+$(document).ready(function() {
+    // Enable debug mode by adding ?debug=true to URL
+    var debugMode = getUrlParameter('debug') === 'true';
+    
+    function normalizeString(str) {
+        if (!str) return '';
+        return str.toString().trim().toLowerCase()
+            .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+            .replace(/[^\w\s-]/g, ''); // Remove special characters except hyphens
+    }
+    
+    function extractNames(data) {
+        if (!data || !data.values) return [];
+        return data.values
+            .map(function(row) {
+                return row[0] ? row[0].toString().trim() : '';
+            })
+            .filter(function(name) {
+                return name && name.length > 0;
+            });
+    }
+
+    function findMatchingName(searchName, namesList) {
+        var normalizedSearch = normalizeString(searchName);
+        
+        // First try exact match
+        for (var i = 0; i < namesList.length; i++) {
+            if (namesList[i] === searchName) {
+                return namesList[i];
+            }
+        }
+        
+        // Then try normalized match
+        for (var i = 0; i < namesList.length; i++) {
+            if (normalizeString(namesList[i]) === normalizedSearch) {
+                return namesList[i];
+            }
+        }
+        
+        // Finally try partial match
+        for (var i = 0; i < namesList.length; i++) {
+            var normalizedName = normalizeString(namesList[i]);
+            if (normalizedName.includes(normalizedSearch) || normalizedSearch.includes(normalizedName)) {
+                return namesList[i];
+            }
+        }
+        
+        return null;
+    }
+
+    // Fetch data from Google Sheets API
+    $.ajax({
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1Wf-0tNXnASISKCbHy0RMKtPVoS8Wgts4rluPM-mOLkA/values/Sheet9!A:A?key=AIzaSyCq9l2N2mxxLdaPb0Kq4ALI7FxVJf8FKsk',
+        dataType: 'json',
+        timeout: 10000, // 10 second timeout
+        success: function(data) {
+            var urlName = getUrlParameter('name');
+            var names = extractNames(data);
+            
+            if (debugMode) {
+                var debugContent = 'URL Name: "' + urlName + '"<br>' +
+                    'Total names in sheet: ' + names.length + '<br>' +
+                    'Names list: ' + JSON.stringify(names.slice(0, 5)) + (names.length > 5 ? '...' : '') + '<br>' +
+                    'Normalized URL name: "' + normalizeString(urlName) + '"';
+                $('#debugContent').html(debugContent);
+                $('#debugInfo').show();
+            }
+            
+            if (!urlName) {
+                $("#recipientName").html('<div class="error-message">No name specified in URL</div>');
+                return;
+            }
+            
+            var matchedName = findMatchingName(urlName, names);
+            
+            if (matchedName) {
+                $("#recipientName").text(matchedName);
+                generateQRCode(matchedName);
+                
+                if (debugMode) {
+                    $('#debugContent').append('<br><strong>Match found:</strong> "' + matchedName + '"');
+                }
+
+                // Check if we should automatically download
+                if (getUrlParameter('download') === 'true') {
+                    setTimeout(function() {
+                        downloadPDF();
+                    }, 1000);
+                }
+            } else {
+                $("#recipientName").html('<div class="error-message">Recipient "' + urlName + '" not found in our records</div>');
+                
+                if (debugMode) {
+                    $('#debugContent').append('<br><strong>No match found</strong><br>' +
+                        'Closest matches: ' + names.filter(function(name) {
+                            return normalizeString(name).includes(normalizeString(urlName).substring(0, 3));
+                        }).slice(0, 3).join(', '));
+                }
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+            var errorMsg = 'Error loading recipient data';
+            if (status === 'timeout') {
+                errorMsg += ' (connection timeout)';
+            } else if (xhr.status === 403) {
+                errorMsg += ' (API key issue)';
+            } else if (xhr.status === 404) {
+                errorMsg += ' (spreadsheet not found)';
+            }
+            
+            $("#recipientName").html('<div class="error-message">' + errorMsg + '</div>');
+            
+            if (debugMode) {
+                $('#debugContent').html('Error details: ' + JSON.stringify({
+                    status: status,
+                    error: error,
+                    responseText: xhr.responseText
+                }));
+                $('#debugInfo').show();
+            }
+        }
+    });
+
+    function generateQRCode(name) {
+        try {
+            // Use the exact name that was found in the spreadsheet
+            var verificationUrl = window.location.origin + window.location.pathname + '?name=' + encodeURIComponent(name);
+            var qr = new QRious({
+                element: document.getElementById('qrCodeCanvas'),
+                value: verificationUrl,
+                size: 130,
+                background: 'white',
+                foreground: '#2c3e50'
+            });
+            
+            if (debugMode) {
+                $('#debugContent').append('<br><strong>QR Code URL:</strong> ' + verificationUrl);
+            }
+        } catch (error) {
+            console.error('QR Code generation error:', error);
+        }
+    }
+});
+
+function downloadPDF() {
+    // Show loading overlay
+    document.getElementById('loadingOverlay').style.display = 'flex';
+    
+    // Get recipient name
+    var recipientName = document.getElementById('recipientName').textContent;
+    
+    // Don't download for error states
+    if (recipientName.includes('not found') || recipientName.includes('Error')) {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        alert('Cannot download certificate: ' + recipientName);
+        return;
+    }
+    
+    // Get certificate element
+    var element = document.getElementById('certificate');
+    
+    // Add download date
+    var currentDate = new Date();
+    var formattedDate = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    var downloadDateElement = document.getElementById('downloadDate');
+    downloadDateElement.textContent = 'Downloaded on: ' + formattedDate;
+    downloadDateElement.style.display = 'block';
+    
+    // Hide download button and debug info for capture
+    var downloadButton = document.querySelector('.download-button');
+    var debugInfo = document.getElementById('debugInfo');
+    downloadButton.style.display = 'none';
+    debugInfo.style.display = 'none';
+    
+    // Wait for fonts and images to load
+    setTimeout(function() {
+        // Use html2canvas to capture the certificate
+        html2canvas(element, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            logging: false,
+            backgroundColor: '#ffffff'
+        }).then(function(canvas) {
+            // Create PDF
+            var { jsPDF } = window.jspdf;
+            var pdf = new jsPDF({
+                orientation: 'landscape',
+                unit: 'mm',
+                format: 'a4'
+            });
+            
+            // Calculate dimensions with a slight margin reduction
+            var pdfWidth = pdf.internal.pageSize.getWidth();
+            var pdfHeight = pdf.internal.pageSize.getHeight();
+            
+            // Add 2mm margin on all sides
+            var margin = 2;
+            var contentWidth = pdfWidth - (margin * 2);
+            var contentHeight = pdfHeight - (margin * 2);
+            
+            // Scale to fit
+            var imageWidth = canvas.width;
+            var imageHeight = canvas.height;
+            var aspectRatio = imageWidth / imageHeight;
+            
+            var finalWidth, finalHeight;
+            
+            if (contentWidth / contentHeight > aspectRatio) {
+                finalHeight = contentHeight;
+                finalWidth = contentHeight * aspectRatio;
+            } else {
+                finalWidth = contentWidth;
+                finalHeight = contentWidth / aspectRatio;
+            }
+            
+            // Center the image
+            var xOffset = margin + (contentWidth - finalWidth) / 2;
+            var yOffset = margin + (contentHeight - finalHeight) / 2;
+            
+            // Add image to PDF
+            pdf.addImage(
+                canvas.toDataURL('image/jpeg', 1.0),
+                'JPEG',
+                xOffset,
+                yOffset,
+                finalWidth,
+                finalHeight,
+                '',
+                'FAST'
+            );
+            
+            // Save PDF
+            var safeFileName = recipientName.replace(/[^a-zA-Z0-9\-_\s]/g, '').replace(/\s+/g, '_');
+            pdf.save(safeFileName + '_certificate.pdf');
+            
+            // Restore original state
+            downloadButton.style.display = 'block';
+            downloadDateElement.style.display = 'none';
+            if (getUrlParameter('debug') === 'true') {
+                debugInfo.style.display = 'block';
+            }
+            
+            // Hide loading overlay
+            document.getElementById('loadingOverlay').style.display = 'none';
+            
+            // Auto-close if needed
+            if (getUrlParameter('download') === 'true') {
+                setTimeout(function() {
+                    window.close();
+                }, 2000);
+            }
+        }).catch(function(error) {
+            console.error('PDF generation error:', error);
+            alert('Error generating PDF: ' + error.message);
+            
+            // Restore original state
+            downloadButton.style.display = 'block';
+            downloadDateElement.style.display = 'none';
+            if (getUrlParameter('debug') === 'true') {
+                debugInfo.style.display = 'block';
+            }
+            
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+    }, 1000);
+}
+
+function getUrlParameter(name) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+</script>
+</body>
+</html>

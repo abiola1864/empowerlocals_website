@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EmpowerFarmers - From Fields to Freedom</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 32, 44, 0.9) 0%, rgba(45, 55, 72, 0.9) 50%, rgba(34, 84, 61, 0.9) 100%),
+                        url('image.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0,300 Q250,200 500,300 T1000,300 L1000,1000 L0,1000 Z" fill="rgba(34,84,61,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #22c55e;
+            animation: typing 3s steps(30, end), blink 0.8s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .number-counter {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .investment-card {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .investment-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+        }
+
+        .diagonal-section {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+            padding: 100px 0;
+        }
+
+        .zigzag-section {
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            padding: 120px 0;
+        }
+
+        .story-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .story-card:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .impact-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            font-weight: bold;
+            margin: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from 0deg, #22c55e, #16a34a, #22c55e);
+            animation: rotate 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hexagon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .hexagon-card {
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+            padding: 40px;
+            border-radius: 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(10deg);
+            transition: all 0.4s ease;
+        }
+
+        .hexagon-card:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-15px);
+        }
+
+        .hexagon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+        }
+
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 32, 44, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            .desktop-menu {
+                display: none;
+            }
+            .number-counter {
+                font-size: 3rem;
+            }
+            .hexagon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-seedling text-white"></i>
+                    </div>
+                    <span class="ml-3 text-xl font-bold">EmpowerFarmers</span>
+                </div>
+                <div class="desktop-menu flex items-center space-x-8">
+                    <a href="#story" class="hover:text-green-400 transition-colors">Our Story</a>
+                    <a href="#impact" class="hover:text-green-400 transition-colors">Impact</a>
+                    <a href="#investment" class="hover:text-green-400 transition-colors">Investment</a>
+                    <a href="#expansion" class="hover:text-green-400 transition-colors">Expansion</a>
+                    <button onclick="window.open('donate.html', '_blank')" class="btn-primary">
+                        Invest in Farmers
+                    </button>
+                </div>
+                <div class="mobile-menu">
+                    <button class="text-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+                <div class="text-green-400 font-semibold text-lg mb-4">From Fields to Freedom</div>
+                <h1 class="text-6xl lg:text-7xl font-black mb-6 leading-tight">
+                    <span class="typing-animation inline-block">Poverty is</span><br>
+                    <span class="text-green-400">Expensive</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 max-w-lg">
+                    We took a bet on farmers with no collateral. 9 months later: 95% repayment rate. Now we're scaling mechanization to transform 250 farmers' lives.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="window.open('donate.html', '_blank')" class="btn-primary text-lg">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Invest Now
+                    </button>
+                    <button class="border-2 border-green-400 text-green-400 px-8 py-3 rounded-full font-semibold hover:bg-green-400 hover:text-black transition-all">
+                        Watch Story
+                    </button>
+                </div>
+            </div>
+            <div class="floating-animation">
+                <div class="w-full h-96 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-tractor text-6xl text-white mb-4"></i>
+                        <div class="text-white text-xl font-semibold">Real Farmers, Real Impact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Numbers -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">The Numbers Don't Lie</h2>
+                <p class="text-gray-400">Our farmers deliver results that matter</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="number-counter">95%</div>
+                    <div class="text-xl font-semibold text-green-400">Repayment Rate</div>
+                    <div class="text-gray-400">No collateral required</div>
+                </div>
+                <div class="text-center">
+                    <div class="number-counter">50kg</div>
+                    <div class="text-xl font-semibold text-green-400">Yield per Acre</div>
+                    <div class="text-gray-400">Best harvest ever</div>
+                </div>
+                <div class="text-center">
+                    <div class="number-counter">100%</div>
+                    <div class="text-xl font-semibold text-green-400">Gave Back</div>
+                    <div class="text-gray-400">5kg yield return</div>
+                </div>
+                <div class="text-center">
+                    <div class="number-counter">$75</div>
+                    <div class="text-xl font-semibold text-green-400">Investment</div>
+                    <div class="text-gray-400">Per farmer impact</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story" class="diagonal-section bg-gradient-to-br from-gray-800 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6">We Took a Bet</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    When everyone said "farmers can't repay without collateral," we believed in their potential. Here's what happened next.
+                </p>
+            </div>
+            
+            <div class="hexagon-grid">
+                <div class="hexagon-card">
+                    <div class="text-3xl font-bold text-green-400 mb-4">The Challenge</div>
+                    <p class="text-gray-300">
+                        Farmers trapped in poverty cycles. No access to quality inputs. No collateral for loans. Traditional programs failing.
+                    </p>
+                </div>
+                <div class="hexagon-card">
+                    <div class="text-3xl font-bold text-green-400 mb-4">Our Bet</div>
+                    <p class="text-gray-300">
+                        We gave loans with ZERO collateral. Provided premium inputs. Trusted farmers to succeed against all odds.
+                    </p>
+                </div>
+                <div class="hexagon-card">
+                    <div class="text-3xl font-bold text-green-400 mb-4">The Result</div>
+                    <p class="text-gray-300">
+                        95% repayment rate. Record harvests. Farmers voluntarily gave back 5kg yield each. Sustainability achieved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16">Success Stories</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="story-card bg-gradient-to-br from-gray-800 to-gray-900 p-8">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-user-farmer text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Habiba's Transformation</h3>
+                    <p class="text-gray-300 mb-4">
+                        From struggling to feed her family to harvesting 50kg per acre - her best yield ever.
+                    </p>
+                    <div class="text-sm text-green-400 font-semibold">✓ Loan repaid in full</div>
+                </div>
+                <div class="story-card bg-gradient-to-br from-gray-800 to-gray-900 p-8">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-seedling text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Community Impact</h3>
+                    <p class="text-gray-300 mb-4">
+                        11 farmers supported, all exceeded expectations. Knowledge sharing created ripple effects.
+                    </p>
+                    <div class="text-sm text-green-400 font-semibold">✓ 100% participation</div>
+                </div>
+                <div class="story-card bg-gradient-to-br from-gray-800 to-gray-900 p-8">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Sustainable Growth</h3>
+                    <p class="text-gray-300 mb-4">
+                        Voluntary 5kg yield returns ensure program sustainability and expansion.
+                    </p>
+                    <div class="text-sm text-green-400 font-semibold">✓ Self-sustaining model</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Opportunities -->
+    <section id="investment" class="py-20 bg-gradient-to-br from-gray-900 to-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6">Your Investment, Their Future</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Every dollar invested creates lasting impact. Choose your level of engagement and watch farmers thrive.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="investment-card p-8 text-center">
+                    <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-seedling text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Seed Supporter</h3>
+                    <div class="text-4xl font-bold text-green-400 mb-2">$250</div>
+                    <p class="text-gray-300 mb-6">Support one farmer for one full season</p>
+                    <div class="space-y-2 text-left mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Direct impact on 1 farmer</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Quarterly impact updates</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Expected 3-year profit: $932</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full">Start Impact</button>
+                </div>
+
+                <div class="investment-card p-8 text-center border-4 border-green-400">
+                    <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tractor text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Mechanization Partner</h3>
+                    <div class="text-4xl font-bold text-green-400 mb-2">$2,500</div>
+                    <p class="text-gray-300 mb-6">Help fund tractor services for 10 farmers</p>
+                    <div class="space-y-2 text-left mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Impact 10 farmers directly</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Monthly detailed reports</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Visit farming community</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Collective profit potential: $9,320</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full">Most Popular</button>
+                </div>
+
+                <div class="investment-card p-8 text-center">
+                    <div class="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Community Champion</h3>
+                    <div class="text-4xl font-bold text-green-400 mb-2">$12,000</div>
+                    <p class="text-gray-300 mb-6">Fund 1 complete tractor for 125 farmers</p>
+                    <div class="space-y-2 text-left mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Transform 125 farming families</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Named recognition program</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Annual community visit</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            <span class="text-sm">Community impact: $116,500</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full">Maximum Impact</button>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400 mb-6">All investments support our proven model with 95% repayment rates</p>
+                <button onclick="scrollToHowTo()" class="border-2 border-green-400 text-green-400 px-8 py-3 rounded-full font-semibold hover:bg-green-400 hover:text-black transition-all">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    How to Invest
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Invest -->
+    <section id="howto" class="py-20 bg-black">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">How to Invest</h2>
+                <p class="text-xl text-gray-300">Simple steps to start transforming farmers' lives today</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Choose Your Impact</h3>
+                    <p class="text-gray-300">Select from our three investment tiers based on the level of impact you want to create.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <p class="text-gray-300">Call us or fill out our investment form. We'll walk you through the process personally.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Track Your Impact</h3>
+                    <p class="text-gray-300">Receive regular updates showing exactly how your investment is transforming farmers' lives.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+                <p class="text-gray-300 mb-6">Our team is standing by to help you create lasting impact in farming communities.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="window.open('donate.html', '_blank')" class="btn-primary">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>
+                        Invest Online
+                    </button>
+                    <button class="border-2 border-green-400 text-green-400 px-8 py-3 rounded-full font-semibold hover:bg-green-400 hover:text-black transition-all">
+                        <i class="fas fa-phone mr-2"></i>
+                        Call: +234 913 477 4276
+                    </button>
+                    <button onclick="window.open('#', '_blank')" class="border-2 border-blue-400 text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-400 hover:text-black transition-all">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Read Full Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expansion Plans -->
+    <section id="expansion" class="zigzag-section bg-gradient-to-br from-green-900 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-8">Next Chapter: Productive Assets</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Beyond inputs - we're scaling to tractors, processing equipment, and storage facilities. 
+                Same model, bigger impact.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="glass-card p-8 text-center">
+                    <i class="fas fa-tractor text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Tractor Sharing</h3>
+                    <p class="text-gray-300">2 tractors per 250 farmers</p>
+                </div>
+                <div class="glass-card p-8 text-center">
+                    <i class="fas fa-warehouse text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Storage Systems</h3>
+                    <p class="text-gray-300">Reduce post-harvest losses</p>
+                </div>
+                <div class="glass-card p-8 text-center">
+                    <i class="fas fa-cogs text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Processing Units</h3>
+                    <p class="text-gray-300">Add value to raw produce</p>
+                </div>
+            </div>
+            
+            <button onclick="window.open('donate.html', '_blank')" class="btn-primary text-xl px-12 py-4">
+                <i class="fas fa-rocket mr-2"></i>
+                Fund the Expansion
+            </button>
+        </div>
+    </section>
+
+    <!-- Why We Care -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl font-bold mb-8">Why We Care</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-heart text-black text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Proven Impact</h3>
+                                <p class="text-gray-300">We've seen farmers transform their lives with just $75 investment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-handshake text-black text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Trust-Based Model</h3>
+                                <p class="text-gray-300">No collateral needed. We believe in human potential over paperwork.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-infinity text-black text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Sustainable Future</h3>
+                                <p class="text-gray-300">Self-sustaining model ensures long-term impact without dependency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="impact-circle">
+                        <div class="text-4xl font-bold">95%</div>
+                        <div class="text-sm">SUCCESS RATE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-green-600 to-green-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-6">Ready to Change Lives?</h2>
+            <p class="text-xl mb-8 opacity-90">
+                Join us in proving that investing in farmers isn't just profitable - it's transformational.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="window.open('donate.html', '_blank')" class="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all">
+                    <i class="fas fa-credit-card mr-2"></i>
+                    Invest Today
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-green-600 transition-all">
+                    <i class="fas fa-phone mr-2"></i>
+                    Call Us: +234 913 477 4276
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-seedling text-white text-sm"></i>
+                        </div>
+                        <span class="ml-2 text-xl font-bold">EmpowerFarmers</span>
+                    </div>
+                    <p class="text-gray-400">From Fields to Freedom</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p>41 CMD Road, Magodo Phase 2</p>
+                        <p>Lagos State, Nigeria</p>
+                        <p>info@empowerlocals.org</p>
+                        <p>+234 913 477 4276</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#story" class="block text-gray-400 hover:text-green-400">Our Story</a>
+                        <a href="#impact" class="block text-gray-400 hover:text-green-400">Impact</a>
+                        <a href="#expansion" class="block text-gray-400 hover:text-green-400">Expansion</a>
+                        <a href="donate.html" class="block text-gray-400 hover:text-green-400">Donate</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/empowerlocals" class="text-gray-400 hover:text-green-400">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/empoweringlocals/" class="text-gray-400 hover:text-green-400">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/empowerlocals" class="text-gray-400 hover:text-green-400">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/empowerlocals" class="text-gray-400 hover:text-green-400">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 Empowerment for Local People Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.sticky-nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(26, 32, 44, 0.95)';
+            } else {
+                nav.style.background = 'rgba(26, 32, 44, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
