@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Are Small Businesses Using Tech? — Empowerment for Local People Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,700&family=Epilogue:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+
+:root{
+  --o:#e75b1e;--o2:#b8431a;
+  --cream:#fdfaf6;--stone:#f0ebe4;
+  --ink:#18120e;--muted:#7a6b5d;--white:#fff;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Epilogue',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:clamp(24px,5vw,68px)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);height:80px;transition:background .4s">
+  <a href="index.html" style="display:flex;align-items:center;gap:12px">
+    <img src="images/empower locals logo orange ico.png" alt="ELP" style="height:38px"/>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:rgba(255,255,255,.65);line-height:1.2;max-width:180px">Empowerment for<br>Local People Foundation</span>
+  </a>
+  <div class="nr" style="display:flex;align-items:center;gap:26px"><a href="index.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Home</a><a href="about.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">About</a><a href="blog.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Blog</a><a href="empowerfarmers.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">EmpowerFarmers</a><a href="team.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Team</a><a href="downloads.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Downloads</a><a href="contact.html" style="font-size:.88rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Contact</a>
+    <a href="donate.html" style="background:#e75b1e;color:#fff;padding:10px 24px;border-radius:100px;font-size:.85rem;font-weight:700;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Donate &#8594;</a>
+  </div>
+  <div id="burger" style="display:none;flex-direction:column;gap:6px;cursor:pointer;padding:4px" onclick="document.getElementById('mob').classList.toggle('open')">
+    <span style="display:block;width:24px;height:2px;background:rgba(255,255,255,.6)"></span>
+    <span style="display:block;width:24px;height:2px;background:rgba(255,255,255,.6)"></span>
+    <span style="display:block;width:24px;height:2px;background:rgba(255,255,255,.6)"></span>
+  </div>
+</nav>
+<div id="mob" style="display:none;flex-direction:column;position:fixed;top:80px;left:0;right:0;z-index:199;background:rgba(18,9,4,.97);border-bottom:1px solid rgba(255,255,255,.06)">
+  <a href="index.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">Home</a><a href="about.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">About</a><a href="blog.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">Blog</a><a href="empowerfarmers.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">EmpowerFarmers</a><a href="team.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">Team</a><a href="downloads.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">Downloads</a><a href="contact.html" style="display:block;padding:16px 28px;font-size:.95rem;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04)">Contact</a>
+  <a href="donate.html" style="display:block;margin:14px 24px;text-align:center;background:#e75b1e;color:#fff;padding:13px;border-radius:100px;font-size:.9rem;font-weight:700">Donate &#8594;</a>
+</div>
+<style>
+@media(max-width:900px){.nr{display:none!important}#burger{display:flex!important}}
+#mob.open{display:flex!important}
+#nav.sc{background:rgba(18,9,4,.96);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+</style>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));
+document.getElementById('nav').classList.toggle('sc',scrollY>60);
+</script>
+
+<section style="position:relative;min-height:65vh;display:flex;align-items:flex-end;overflow:hidden;background:#18120e;padding-top:80px">
+  <div style="position:absolute;inset:0;background:url('images/DSC04054.jpg') center 25%/cover no-repeat;opacity:.45;animation:drift 20s ease-in-out infinite alternate"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(18,9,4,.96) 0%,rgba(18,9,4,.45) 55%,rgba(18,9,4,.15) 100%)"></div>
+  <div style="position:relative;z-index:2;padding:0 clamp(24px,6vw,80px) clamp(56px,7vw,90px);max-width:900px">
+    <p style="font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#e75b1e;margin-bottom:22px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1px;background:#e75b1e;display:inline-block"></span>Research &middot; Technology &middot; January 2024</p>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:700;line-height:.96;letter-spacing:-.025em;color:#fff;margin-bottom:22px">Are Small Businesses<br><em style="font-style:italic;color:#e75b1e">Actually Using Tech?</em></h1>
+    <p style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:560px;margin-bottom:34px">We surveyed 1,500 businesses across 40 Lagos markets. What we found challenged every assumption we had brought into the field.</p>
+    <a href="blog.html" style="display:inline-flex;align-items:center;gap:6px;border-radius:100px;font-size:.85rem;font-weight:600;padding:13px 28px;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.75)">&#8592; Back to Blog</a>
+  </div>
+</section>
+<style>@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.04) translateY(-18px)}}</style>
+<article style="padding:clamp(64px,8vw,100px) 0">
+  <div class="wrap" style="max-width:780px">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:52px;padding-bottom:24px;border-bottom:1px solid rgba(0,0,0,.08)">
+      <p style="font-size:.8rem;color:var(--muted)">By <strong style="color:var(--ink)">Akosile Oluwayomi</strong> and <strong style="color:var(--ink)">Oyebanjo Abiola</strong> &middot; January 31, 2024 &middot; 8 min read</p>
+      <a href="https://medium.com/@oluwayomiakosile/are-the-small-businesses-using-tech-akosile-oluwayomi-and-oyebanjo-abiola-3f0f85689ec2" target="_blank" rel="noopener" style="font-size:.78rem;font-weight:600;color:var(--o);display:inline-flex;align-items:center;gap:5px">Read on Medium &#8594;</a>
+    </div>
+
+    <blockquote style="border-left:3px solid var(--o);padding-left:24px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;font-weight:300;color:var(--ink);margin:40px 0;line-height:1.5">"We are not the market women, we are the market women's best friend."</blockquote>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">This saying circulates on Nigerian social media as a joke. But when we ran a quick quiz at our December 2023 mini-summit in Lagos — asking over 40 attendees whether they had a family member or close friend selling in a Lagos open market — almost every hand went up. The connection to local small business is not peripheral for most Nigerians. It is personal, and close.</p>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">That closeness is why ELP Foundation does what it does. And it is why, in 2023, we decided to go beyond our own programme experience and ask a harder question: are the small businesses we work alongside actually using technology? Not in theory. Not in aspirational policy documents. In practice — on the market floor, in the afternoon heat, between customers.</p>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">What we found contradicted most of what we had assumed going in.</p>
+
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:700;margin:48px 0 14px;color:var(--ink)">The numbers did not add up</h2>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">The common assumption among development practitioners is that technology adoption among small firms is growing — that the availability of record-keeping apps, mobile payment tools, and inventory software means that at least some portion of the market has quietly started using them. We held some version of that assumption ourselves.</p>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">Then we went into the field. Over four years of survey work, including a wave covering more than 1,500 small businesses across 40 markets in Lagos State, we looked specifically for firms that had adopted digital record-keeping tools — apps designed to help them log sales, track stock, and understand their margins. We expected to find a meaningful cluster. We found almost none. Across 1,500 businesses, we could count on one hand the firms that had genuinely adopted a digital record-keeping tool and were using it consistently.</p>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">One statistic gave us pause, and eventually gave us hope: over 90% of those same business owners owned and regularly used an internet-enabled smartphone. The gap was not infrastructure. It was not access. Something else was stopping adoption.</p>
+
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:700;margin:48px 0 14px;color:var(--ink)">Why they are not adopting — five lessons from our summit</h2>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">In December 2023, ELP Foundation convened a <a href="blog-6.html" style="color:var(--o);font-weight:600">mini-summit on technology for small businesses</a> — bringing together representatives from the Lagos State Employment Trust Fund (LSETF), Growing Businesses Foundation, Fate Foundation, 8th Gear Hub, Lagos Food Bank Initiative, and small firm owners themselves. The conversation produced five clear lessons.</p>
+
+    <div style="background:var(--stone);border-radius:14px;padding:36px;margin:40px 0;display:flex;flex-direction:column;gap:28px">
+
+      <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff">1</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:6px">Give it time</h3>
+          <p style="font-size:.92rem;color:#444;line-height:1.8">In 2000, Nigeria's internet penetration was 0.3%. By 2021 it was over 55%. Adoption curves do not move in straight lines, and small business technology adoption will follow a similar trajectory — but only if stakeholders remain consistent, patient, and present. The instinct to measure impact in one or two years misreads how behaviour change actually works.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff">2</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:6px">Treat technology as a tool, not a solution</h3>
+          <p style="font-size:.92rem;color:#444;line-height:1.8">Most technology built for small business was not designed with Lagos market vendors in mind. It was designed for a user who is literate, has consistent data access, and has time to learn a new interface. When technology is sophisticated rather than useful, small firms do not adopt it — and blaming the firms misses the point entirely. The design needs to change, not the user.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff">3</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:6px">Communicate the cost of not adopting</h3>
+          <p style="font-size:.92rem;color:#444;line-height:1.8">Telling a market vendor about the benefits of digital records is less persuasive than telling them what they are losing by not keeping them. One insight from the summit: framing it as "Firm X across the road earns twelve naira more per transaction because they record their sales" lands differently than any abstract pitch about technology. Loss framing works. Aspiration framing often does not, at this stage.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff">4</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:6px">Build for continuous use, not just first adoption</h3>
+          <p style="font-size:.92rem;color:#444;line-height:1.8">Initial adoption is not the goal — sustained use is. Most technology interventions celebrate when a firm downloads an app or attends a training session. The harder question is whether they are still using it six months later. Technology that is expensive to maintain, hard to navigate without help, or that solves a problem the vendor does not actually feel as a problem will not survive first contact with a busy trading day.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start">
+        <div style="width:44px;height:44px;border-radius:10px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff">5</div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:6px">Meet them where they already are</h3>
+          <p style="font-size:.92rem;color:#444;line-height:1.8">90% of our survey respondents already had smartphones with internet access. The infrastructure gap is narrower than assumed. The more immediate gap is in trusted relationships — the kind that make a vendor willing to try something new with their livelihood. ELP Foundation's experience, across years of working in Lagos markets, is that the relationship precedes the tool. You have to be in the market first — and you have to stay.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:700;margin:48px 0 14px;color:var(--ink)">What we are doing about it</h2>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">These findings directly shaped ELP Foundation's programming choices in 2024 and 2025. <a href="https://empowerbot-saas.onrender.com/index.html" target="_blank" style="color:var(--o);font-weight:600">EmpowerBot</a> — our WhatsApp-native AI coaching tool — was built specifically because 90% of our survey respondents already had WhatsApp. We did not build a new app. We went to where they already were.</p>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">Our <a href="local-business-school.html" style="color:var(--o);font-weight:600">Local Business School</a> curriculum was rewritten after this research to reduce reliance on written exercises, increase verbal interaction, and anchor every concept to a real business situation in the room. The <a href="downloads/ELP SME DIgest Handout (1).pdf" download style="color:var(--o);font-weight:600">ELP SME Digest Handout</a> was produced as a printed resource specifically for vendors who are not regular users of digital content.</p>
+
+    <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">The research continues. We are currently measuring the causal effect of our digital record-keeping intervention on firm revenue and survival — a randomised evaluation that will give us harder numbers on what actually works, not just what we believe works. Partners on that work include <a href="https://cega.berkeley.edu/collection/e-bookkeeping-measuring-small-firms-behavior-in-nigeria/" target="_blank" rel="noopener" style="color:var(--o);font-weight:600">CEGA</a>, <a href="https://www.theigc.org/collections/e-bookkeeping-measuring-small-firm-behaviour" target="_blank" rel="noopener" style="color:var(--o);font-weight:600">IGC</a>, and <a href="https://grp.cepr.org/pedl/projects/e-bookkeeping-measuring-small-firm-behaviour" target="_blank" rel="noopener" style="color:var(--o);font-weight:600">PEDL</a>.</p>
+
+    <blockquote style="border-left:3px solid var(--o);padding-left:24px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;font-weight:300;color:var(--ink);margin:40px 0;line-height:1.5">The connection to local small business is not peripheral for most Nigerians. It is personal. That is why the question of whether technology is helping or not deserves more honest answers than we have been giving it.</blockquote>
+
+    <div style="background:var(--ink);border-radius:12px;padding:32px;margin:48px 0;text-align:center">
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:12px">Originally published</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:16px">This piece was first published on Medium in January 2024.<br>Read the full original version on the Medium platform.</p>
+      <a href="https://medium.com/@oluwayomiakosile/are-the-small-businesses-using-tech-akosile-oluwayomi-and-oyebanjo-abiola-3f0f85689ec2" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:var(--o);color:#fff;border-radius:100px;font-size:.88rem;font-weight:700;padding:13px 28px">Read on Medium &#8594;</a>
+    </div>
+
+    <div style="margin-top:60px;padding-top:32px;border-top:1px solid rgba(0,0,0,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px">
+      <a href="blog.html" style="font-size:.85rem;font-weight:600;color:var(--o)">&#8592; All posts</a>
+      <a href="blog-6.html" style="font-size:.85rem;font-weight:600;color:var(--o)">Read: ELP Mini Summit 2023 &#8594;</a>
+    </div>
+  </div>
+</article>
+
+<footer style="background:#080503;padding:clamp(52px,7vw,80px) 0 24px">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:48px;margin-bottom:40px">
+      <div>
+        <img src="images/empower locals logo orange ico.png" alt="ELP" style="height:30px;margin-bottom:16px"/>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.8;max-width:210px;margin-bottom:18px">Eliminating inefficiencies in local businesses through evidence, technology, and community action since 2017.</p>
+        <div style="display:flex;gap:8px">
+          <a href="https://twitter.com/empowerlocals" target="_blank" style="width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" onmouseover="this.style.background='#e75b1e'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><img src="images/logo-white.png" alt="Twitter" style="width:13px;height:13px;object-fit:contain;filter:brightness(0) invert(1)"/></a>
+          <a href="https://www.instagram.com/empowerlocals" target="_blank" style="width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" onmouseover="this.style.background='#e75b1e'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><img src="images/Instagram_Glyph_Gradient.png" alt="Instagram" style="width:13px;height:13px;object-fit:contain;filter:brightness(0) invert(1)"/></a>
+          <a href="https://www.linkedin.com/company/empoweringlocals/" target="_blank" style="width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" onmouseover="this.style.background='#e75b1e'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><img src="images/In-Blue-72-┬«@2x.png" alt="LinkedIn" style="width:13px;height:13px;object-fit:contain;filter:brightness(0) invert(1)"/></a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px">Pages</h4>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <a href="about.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">About</a><a href="blog.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Blog</a><a href="lsetf.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">LSETF Programme</a><a href="empowerfarmers.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">EmpowerFarmers</a><a href="support.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Support a Farmer</a><a href="team.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Team</a><a href="joinus.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Careers</a><a href="downloads.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Downloads</a><a href="donate.html" style="font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Donate</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px">Contact</h4>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.9">41 CMD Road, Magodo Phase 2<br>Lagos State, Nigeria<br><br><a href="tel:+2349134774276" style="color:rgba(255,255,255,.38)">+234 913 477 4276</a><br><a href="mailto:info@empowerlocals.org" style="color:rgba(255,255,255,.38)">info@empowerlocals.org</a></p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p style="font-size:.7rem;color:rgba(255,255,255,.2)">&copy; 2026 Empowerment for Local People Foundation. All rights reserved.</p>
+      <div style="display:flex;gap:20px">
+        <a href="privacy.html" style="font-size:.7rem;color:rgba(255,255,255,.25)">Privacy</a>
+        <a href="terms.html" style="font-size:.7rem;color:rgba(255,255,255,.25)">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const ro=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(!e.isIntersecting)return;e.target.style.transitionDelay=(i%3*.1)+'s';e.target.classList.add('in');ro.unobserve(e.target);});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+</script>
+
+</body>
+</html>
