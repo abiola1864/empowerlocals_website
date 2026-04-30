@@ -507,7 +507,7 @@ footer{background:#080503;padding:clamp(52px,7vw,88px) 0 28px}
       <a href="blog-7.html" style="display:flex;gap:18px;align-items:center;background:rgba(255,255,255,.04);border:1.5px solid rgba(231,91,30,.35);border-radius:12px;padding:18px;text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,91,30,.8)'" onmouseout="this.style.borderColor='rgba(231,91,30,.35)'">
         <img src="images/agege-bootcamp-2026-1.jpg" alt="Agege graduation" style="width:96px;height:72px;object-fit:cover;object-position:center 30%;border-radius:8px;flex-shrink:0"/>
         <div>
-          <span style="background:#e75b1e;color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:100px;display:inline-block;margin-bottom:7px">New &middot; Today</span>
+          <span style="background:#e75b1e;color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:100px;display:inline-block;margin-bottom:7px">Apr 30, 2026</span>
           <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:4px">Our hardest bootcamp yet — 100+ graduates in Agege</p>
           <p style="font-size:.73rem;color:rgba(255,255,255,.38)">LSETF Programme &middot; April 30, 2026</p>
         </div>
@@ -680,7 +680,7 @@ footer{background:#080503;padding:clamp(52px,7vw,88px) 0 28px}
     <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:20px;margin-bottom:20px">
 
       <a href="blog-7.html" class="rv" style="display:flex;flex-direction:column;background:var(--ink);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .35s;position:relative" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <span style="position:absolute;top:14px;left:14px;z-index:2;background:#e75b1e;color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px">New &middot; Today</span>
+        <span style="position:absolute;top:14px;left:14px;z-index:2;background:#e75b1e;color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px">Apr 30, 2026</span>
         <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/agege-bootcamp-2026-1.jpg" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.75;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
         <div style="padding:24px;flex:1;display:flex;flex-direction:column;gap:10px">
           <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">LSETF Programme &middot; April 30, 2026</span>
@@ -1203,6 +1203,26 @@ const ro = new IntersectionObserver(es => {
   });
 }, { threshold:.08 });
 document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+/* ── Relative time for Agege post ── */
+(function(){
+  var pub = new Date('2026-04-30T00:00:00');
+  var now = new Date();
+  var diff = Math.floor((now - pub) / 86400000);
+  var badge = document.getElementById('agege-badge');
+  var dateEl = document.getElementById('agege-date');
+  if(!badge) return;
+  var label;
+  if(diff === 0)       label = 'Today';
+  else if(diff === 1)  label = 'Yesterday';
+  else if(diff < 7)    label = diff + ' days ago';
+  else if(diff < 14)   label = '1 week ago';
+  else if(diff < 30)   label = Math.floor(diff/7) + ' weeks ago';
+  else if(diff < 60)   label = '1 month ago';
+  else                 label = Math.floor(diff/30) + ' months ago';
+  badge.textContent = label;
+  if(dateEl) dateEl.textContent = 'April 30, 2026 · ' + label;
+})();
 </script>
 </body>
 </html>

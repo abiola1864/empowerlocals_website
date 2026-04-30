@@ -72,7 +72,7 @@ document.getElementById('nav').classList.toggle('sc',scrollY>60);
   <div class="wrap">
     <div style="opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease" class="rv"><p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e75b1e;margin-bottom:14px;display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:20px;height:1.5px;background:#e75b1e;flex-shrink:0"></span>Latest posts</p><h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--ink);margin-bottom:40px">Blog</h2></div>
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px"><a href="blog-7.html" style="display:block;background:var(--white);border-radius:12px;border:1px solid rgba(0,0,0,.08);overflow:hidden;transition:transform .35s,box-shadow .35s" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 16px 44px rgba(0,0,0,.09)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-  <div style="position:relative"><img src="images/agege-bootcamp-2026-1.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 30%"/><span style="position:absolute;top:12px;left:12px;background:#e75b1e;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px">New</span></div>
+  <div style="position:relative"><img src="images/agege-bootcamp-2026-1.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 30%"/><span style="position:absolute;top:12px;left:12px;background:#e75b1e;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px"" id="blog7-badge">Apr 30, 2026</span></div>
   <div style="padding:28px">
     <span style="font-size:.65rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--o);margin-bottom:10px;display:block">LSETF Programme</span>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;line-height:1.2">Our hardest bootcamp yet — and our most important one</h3>
@@ -207,5 +207,14 @@ const ro=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(!e.isIntersecting)r
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 </script>
 
+
+<script>
+(function(){
+  var pub=new Date('2026-04-30T00:00:00'),now=new Date(),diff=Math.floor((now-pub)/86400000);
+  var el=document.getElementById('blog7-badge');
+  if(!el)return;
+  el.textContent=diff===0?'Today':diff===1?'Yesterday':diff<7?diff+' days ago':diff<14?'1 week ago':diff<30?Math.floor(diff/7)+' weeks ago':diff<60?'1 month ago':Math.floor(diff/30)+' months ago';
+})();
+</script>
 </body>
 </html>

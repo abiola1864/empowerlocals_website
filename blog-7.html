@@ -70,7 +70,7 @@ document.getElementById('nav').classList.toggle('sc',scrollY>60);
 <style>@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.04) translateY(-18px)}}</style>
 <article style="padding:clamp(64px,8vw,100px) 0">
   <div class="wrap" style="max-width:780px">
-    <p style="font-size:.8rem;color:var(--muted);margin-bottom:60px">By <strong>Omotola Ogunlana</strong> &middot; LSETF Programme &middot; April 30, 2026</p>
+    <p style="font-size:.8rem;color:var(--muted);margin-bottom:60px">ELP Foundation &middot; LSETF Programme &middot; April 30, 2026 &middot; <span id="b7-rel">just now</span></p>
 
     <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">Today, 30 April 2026, over 100 small business owners graduated from ELP Foundation's MSME Capacity Building Bootcamp in Agege, Lagos — the fifth session of the year, delivered in partnership with the Lagos State Employment Trust Fund. They sat in rows in maroon and yellow academic gowns. They held certificates. Some took photographs to send to their families.</p>
 
@@ -86,7 +86,7 @@ document.getElementById('nav').classList.toggle('sc',scrollY>60);
 
     <p style="font-size:1.02rem;color:#333;line-height:1.9;margin-bottom:28px">By the end of session one, our facilitators knew we had a choice. We could continue with the designed curriculum and lose most of the room by session three. Or we could adapt.</p>
 
-    <blockquote style="border-left:3px solid var(--o);padding-left:24px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;font-weight:300;color:var(--ink);margin:40px 0;line-height:1.5">"By session two, we had thrown out most of the written exercises. Everything became conversation. Call and response. Demonstration. We spoke in Yoruba, in Pidgin, in whatever the room needed." — Omotola Ogunlana, Training Manager</blockquote>
+    <blockquote style="border-left:3px solid var(--o);padding-left:24px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;font-weight:300;color:var(--ink);margin:40px 0;line-height:1.5">"By session two, we had thrown out most of the written exercises. Everything became conversation. Call and response. Demonstration. We spoke in Yoruba, in Pidgin, in whatever the room needed." — ELP Foundation facilitator, Agege cohort</blockquote>
 
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:700;margin:48px 0 14px;color:var(--ink)">What adaptation actually looked like</h2>
 
@@ -195,5 +195,14 @@ const ro=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(!e.isIntersecting)r
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 </script>
 
+
+<script>
+(function(){
+  var pub=new Date('2026-04-30T00:00:00'),now=new Date(),diff=Math.floor((now-pub)/86400000);
+  var el=document.getElementById('b7-rel');
+  if(!el)return;
+  el.textContent=diff===0?'today':diff===1?'yesterday':diff<7?diff+' days ago':diff<14?'1 week ago':diff<30?Math.floor(diff/7)+' weeks ago':diff<60?'1 month ago':Math.floor(diff/30)+' months ago';
+})();
+</script>
 </body>
 </html>
