@@ -23,44 +23,6 @@ img{display:block;max-width:100%}
 .wrap{max-width:1300px;margin-inline:auto;padding-inline:clamp(24px,5vw,72px)}
 
 /* ─── NAV ─────────────────────────────────── */
-
-/* ─── DROPDOWN NAV ──────────────────────────── */
-.nav-item{position:relative}
-.nav-top{font-size:.92rem;font-weight:400;color:rgba(255,255,255,.55);transition:color .2s;letter-spacing:.01em;cursor:pointer;display:block;padding:4px 0}
-.nav-top:hover{color:var(--o)}
-.nav-drop{
-  position:absolute;top:calc(100% + 16px);left:50%;
-  transform:translateX(-50%);
-  background:rgba(18,9,4,.97);
-  backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:10px;
-  padding:10px 0;
-  min-width:200px;
-  opacity:0;pointer-events:none;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity .22s ease,transform .22s ease;
-  z-index:300;
-}
-.nav-item:hover .nav-drop,
-.nav-item.open .nav-drop{
-  opacity:1;pointer-events:all;
-  transform:translateX(-50%) translateY(0);
-}
-.nav-drop a{
-  display:block;padding:10px 20px;
-  font-size:.82rem;color:rgba(255,255,255,.55);
-  transition:color .15s,background .15s;
-  white-space:nowrap;
-}
-.nav-drop a:hover{color:var(--o);background:rgba(255,255,255,.04)}
-.nav-drop::before{
-  content:'';position:absolute;top:-6px;left:50%;
-  transform:translateX(-50%);
-  border:6px solid transparent;
-  border-bottom-color:rgba(255,255,255,.08);
-}
-
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -79,13 +41,12 @@ img{display:block;max-width:100%}
 .nr a{font-size:.92rem;font-weight:400;color:rgba(255,255,255,.55);transition:color .2s;letter-spacing:.01em}
 .nr a:hover,.nr a:focus{color:var(--o)}
 .btn-donate{
-  background:var(--o)!important;color:var(--white)!important;
+  background:var(--o);color:var(--white)!important;
   padding:11px 26px;border-radius:100px;
   font-size:.88rem!important;font-weight:600!important;
   transition:background .25s,transform .25s;
-  opacity:1!important;
 }
-.btn-donate:hover{background:var(--o2)!important;transform:translateY(-1px)}
+.btn-donate:hover{background:var(--o2);transform:translateY(-1px)}
 .burger{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:6px;opacity:0;animation:fadeup .7s .8s forwards}
 .burger span{display:block;width:24px;height:2px;background:rgba(255,255,255,.6);border-radius:2px;transition:.3s}
 @media(max-width:860px){.nr{display:none}.burger{display:flex}}
@@ -227,11 +188,9 @@ img{display:block;max-width:100%}
 /* 2×2 grid layout */
 .prog-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:20px;
 }
-@media(max-width:900px){.prog-grid{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:560px){.prog-grid{grid-template-columns:1fr!important}}
 .prog-card{
   position:relative;border-radius:12px;overflow:hidden;
   min-height:360px;background:var(--ink);
@@ -393,84 +352,40 @@ footer{background:#080503;padding:clamp(52px,7vw,88px) 0 28px}
     <img src="images/empower locals logo orange ico.png" alt="ELP logo"/>
     <span class="nl-name">Empowerment for<br>Local People Foundation</span>
   </div>
-  <div class="nr" id="nr">
-    <div class="nav-item">
-      <a href="about.html" class="nav-top">About ▾</a>
-      <div class="nav-drop"><div class="nav-drop-inner">        <a href="about.html">Our Story</a>
-        <a href="team.html">Team</a>
-        <a href="press.html">Press &amp; Media</a>
-        <a href="events.html">Events</a></div></div>
-    </div>
-    <div class="nav-item">
-      <a href="#progs" class="nav-top">Our Work ▾</a>
-      <div class="nav-drop"><div class="nav-drop-inner">        <a href="lsetf.html">LSETF Programme</a>
-        <a href="empowerfarmers.html">EmpowerFarmers</a>
-        <a href="https://empowerbot-saas.onrender.com/index.html" target="_blank">EmpowerBot AI</a>
-        <a href="market-outreach.html">Market Outreach</a>
-        <a href="local-business-school.html">Local Business School</a>
-        <a href="market-outreach.html">Market Outreach</a>
-  <a href="local-business-school.html">Local Business School</a>
-  <a href="sme-digest.html">SME Digest</a>
-        <a href="downloads.html">Research &amp; Downloads</a></div></div>
-    </div>
-    <div class="nav-item">
-      <a href="blog.html" class="nav-top">Blog ▾</a>
-      <div class="nav-drop"><div class="nav-drop-inner">        <a href="blog-6.html">Mini Summit 2023</a>
-        <a href="blog-5.html">100 Markets First</a>
-        <a href="blog-4.html">The SME Digest Story</a>
-        <a href="blog-2.html">EmpowerFarmers 2024</a>
-        <a href="blog-3.html">Agege Bootcamp</a></div></div>
-    </div>
-    <a href="joinus.html" class="nav-top">Careers</a>
-    <a href="contact.html" class="nav-top">Contact</a>
-    <a href="support.html" class="btn-donate">Support →</a>
+  <div class="nr">
+    <a href="#progs">Our Work</a>
+    <a href="about.html">About</a>
+    <a href="empowerfarmers.html">EmpowerFarmers</a>
+    <a href="team.html">Team</a>
+    <a href="donate.html" class="btn-donate">Donate →</a>
   </div>
   <div class="burger" id="burger" aria-label="Menu">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob" id="mob">
-  <a href="about.html">About Us</a>
-  <a href="team.html" style="padding-left:36px;font-size:.85rem;color:rgba(255,255,255,.4)">&#8627; Team</a>
-  <a href="press.html" style="padding-left:36px;font-size:.85rem;color:rgba(255,255,255,.4)">&#8627; Press &amp; Media</a>
-  <a href="events.html" style="padding-left:36px;font-size:.85rem;color:rgba(255,255,255,.4)">&#8627; Events</a>
-  <a href="lsetf.html">LSETF Programme</a>
+  <a href="#progs">Our Work</a>
+  <a href="about.html">About</a>
   <a href="empowerfarmers.html">EmpowerFarmers</a>
-  <a href="market-outreach.html">Market Outreach</a>
-        <a href="local-business-school.html">Local Business School</a>
-        <a href="market-outreach.html">Market Outreach</a>
-  <a href="local-business-school.html">Local Business School</a>
-  <a href="sme-digest.html">SME Digest</a>
-  <a href="https://empowerbot-saas.onrender.com/index.html" target="_blank">EmpowerBot AI</a>
-  <a href="blog.html">Blog</a>
-  <a href="downloads.html">Downloads</a>
-  <a href="joinus.html">Careers</a>
-  <a href="contact.html">Contact</a>
-  <a href="support.html" class="btn-donate">Support →</a>
+  <a href="team.html">Team</a>
+  <a href="donate.html" class="btn-donate">Donate →</a>
 </div>
 
 <!-- ════ HERO ═══════════════════════════════ -->
 <section id="hero">
 
   <!-- Slideshow: banner + EmpowerFarmers + LSETF + general -->
-  <div class="slide"     style="background-image:url('images/empowerwomen1.jpeg');background-position:center 30%"></div>
-  <div class="slide"     style="background-image:url('images/IMG-20221220-WA0015.jpg');background-position:center 40%"></div>
-  <div class="slide"     style="background-image:url('images/DSC04054.jpg');background-position:center 25%"></div>
-  <div class="slide"     style="background-image:url('images/DSC03958.jpg');background-position:center 30%"></div>
+  <div class="slide"     style="background-image:url('banner.jpg');background-position:center 40%"></div>
+  <div class="slide"     style="background-image:url('images/event-group.jpg');background-position:center 30%"></div>
+  <div class="slide"     style="background-image:url('images/mini-summit-2023.jpg');background-position:center 25%"></div>
+  <div class="slide"     style="background-image:url('images/speaker-elp-banner.jpg');background-position:center 30%"></div>
 
   <div class="hero-ov"></div>
   <canvas id="embers"></canvas>
   <div class="glow" id="glow"></div>
 
   <div class="hero-body">
-    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:8px 16px;margin-bottom:28px;animation:badgein 1s .4s both">
-  <span style="width:7px;height:7px;border-radius:50%;background:#e75b1e;display:inline-block;animation:pulse 2s ease-in-out infinite"></span>
-  <span style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75)">Nigeria &middot; Since 2017</span>
-</div>
-<style>
-@keyframes badgein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-</style>
+    <p class="hero-kicker">Lagos · Minna · Nationwide · Since 2017</p>
 
     <div class="hero-stories" id="storyBox">
       <!-- injected by JS -->
@@ -486,93 +401,21 @@ footer{background:#080503;padding:clamp(52px,7vw,88px) 0 28px}
   <div class="scroll-nudge">Scroll</div>
 </section>
 
-<!-- ════ LATEST UPDATES STRIP ════════════════ -->
-<section style="background:var(--ink);padding:clamp(32px,4.5vw,48px) 0;border-bottom:1px solid rgba(255,255,255,.05)">
-  <div class="wrap">
-    <div style="display:flex;align-items:center;margin-bottom:20px">
-      <span style="width:8px;height:8px;border-radius:50%;background:#e75b1e;display:inline-block;animation:pulse2 2s ease-in-out infinite;margin-right:10px"></span>
-      <span style="font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4)">Latest from ELP Foundation</span>
-      <a href="blog.html" style="font-size:.78rem;font-weight:600;color:rgba(255,255,255,.3);margin-left:auto" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='rgba(255,255,255,.3)'">All posts &rarr;</a>
-    </div>
-    <style>@keyframes pulse2{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}</style>
-    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px">
-
-      <!-- #1 FEATURED: Agege graduation — TODAY -->
-      <a href="blog-7.html" style="display:flex;gap:18px;align-items:center;background:rgba(255,255,255,.04);border:1.5px solid rgba(231,91,30,.35);border-radius:12px;padding:18px;text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(231,91,30,.8)'" onmouseout="this.style.borderColor='rgba(231,91,30,.35)'">
-        <img src="images/agege-bootcamp-2026-1.jpg" alt="Agege graduation" style="width:96px;height:72px;object-fit:cover;object-position:center 30%;border-radius:8px;flex-shrink:0"/>
-        <div>
-          <span style="background:#e75b1e;color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:100px;display:inline-block;margin-bottom:7px">Apr 30, 2026</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:4px">Our hardest bootcamp yet — 100+ graduates in Agege</p>
-          <p style="font-size:.73rem;color:rgba(255,255,255,.38)">LSETF Programme &middot; April 30, 2026</p>
-        </div>
-      </a>
-
-      <!-- Upcoming event -->
-      <a href="events.html" style="display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.22)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
-        <p style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e75b1e;margin-bottom:8px">&#x1F4C5; Next event</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Next LSETF Bootcamp — June 2026</p>
-        <p style="font-size:.73rem;color:rgba(255,255,255,.38)">Applications open &middot; Agege, Lagos</p>
-      </a>
-
-      <!-- EmpowerFarmers -->
-      <a href="support.html" style="display:flex;flex-direction:column;justify-content:center;background:rgba(34,132,63,.1);border:1px solid rgba(34,132,63,.3);border-radius:12px;padding:18px;text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(34,132,63,.65)'" onmouseout="this.style.borderColor='rgba(34,132,63,.3)'">
-        <p style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#22843f;margin-bottom:8px">&#127807; empowerFarmers</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Planting begins May 2026 — 85 spots open</p>
-        <p style="font-size:.73rem;color:rgba(255,255,255,.38)">Fund a farmer &rarr;</p>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
 <!-- ════ PROGRAMMES ══════════════════════════ -->
 
-<section style="background:#fff;padding:clamp(36px,5vw,52px) 0;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)">
+<section style="background:var(--stone);padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(0,0,0,.07)">
   <div class="wrap">
-    <p style="font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:32px">Research partners &amp; press coverage</p>
-    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,60px);flex-wrap:wrap">
-
-      <a href="https://www.theigc.org/collections/e-bookkeeping-measuring-small-firm-behaviour" target="_blank" rel="noopener" style="opacity:.65;transition:opacity .25s;display:flex;align-items:center" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
-        <img src="images/logo-igc.png" alt="IGC — International Growth Centre" style="height:52px;width:auto;object-fit:contain"/>
-      </a>
-
-      <a href="https://cega.berkeley.edu/collection/e-bookkeeping-measuring-small-firms-behavior-in-nigeria/" target="_blank" rel="noopener" style="opacity:.65;transition:opacity .25s;display:flex;align-items:center" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
-        <img src="images/logo-cega.png" alt="CEGA — Center for Effective Global Action" style="height:44px;width:auto;object-fit:contain"/>
-      </a>
-
-      <a href="https://grp.cepr.org/pedl/projects/e-bookkeeping-measuring-small-firm-behaviour" target="_blank" rel="noopener" style="opacity:.65;transition:opacity .25s;display:flex;align-items:center" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
-        <img src="images/logo-pedl.png" alt="PEDL — Private Enterprise Development" style="height:48px;width:auto;object-fit:contain"/>
-      </a>
-
-      <a href="https://tribuneonlineng.com/foundation-equips-smes-with-business-insights-digital-training/" target="_blank" rel="noopener" style="opacity:.65;transition:opacity .25s;display:flex;align-items:center" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
-        <img src="images/logo-nigerian-tribune.png" alt="Nigerian Tribune" style="height:38px;width:auto;object-fit:contain"/>
-      </a>
-
-      <a href="https://www.thisdaylive.com/2022/12/30/foundation-equips-smes-with-business-insights-digital-training/" target="_blank" rel="noopener" style="opacity:.65;transition:opacity .25s;display:flex;align-items:center" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
-        <img src="images/logo-thisday.png" alt="ThisDay" style="height:38px;width:auto;object-fit:contain"/>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ════ PHOTO STRIP ════════════════════════ -->
-<section style="padding:clamp(40px,5vw,60px) 0;background:var(--cream);overflow:hidden">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-      <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3">
-        <img src="images/DSC04162.jpg" alt="Media interview at ELP event" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .6s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-      </div>
-      <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3">
-        <img src="images/DSC04291__1_.jpg" alt="Award of Excellence ceremony" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .6s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-      </div>
-      <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3">
-        <img src="images/IMG-20221220-WA0015.jpg" alt="Lagos market trader" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .6s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-      </div>
-      <div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3">
-        <img src="images/DSC04373.jpg" alt="ELP Mini Summit team" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .6s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-      </div>
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:28px">As featured in</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap">
+      <a href="https://tribuneonlineng.com/foundation-equips-smes-with-business-insights-digital-training/" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--muted);opacity:.7;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.7'">Nigerian Tribune</a>
+      <span style="width:1px;height:24px;background:rgba(0,0,0,.15)"></span>
+      <a href="https://www.thisdaylive.com/2022/12/30/foundation-equips-smes-with-business-insights-digital-training/" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--muted);opacity:.7;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.7'">ThisDay</a>
+      <span style="width:1px;height:24px;background:rgba(0,0,0,.15)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--muted);opacity:.5">IGC Partner</span>
+      <span style="width:1px;height:24px;background:rgba(0,0,0,.15)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--muted);opacity:.5">CEGA Partner</span>
+      <span style="width:1px;height:24px;background:rgba(0,0,0,.15)"></span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--muted);opacity:.5">PEDL Partner</span>
     </div>
   </div>
 </section>
@@ -622,112 +465,17 @@ footer{background:#080503;padding:clamp(52px,7vw,88px) 0 28px}
       </a>
 
       <!-- 4. EmpowerBot -->
-      <a class="prog-card rv" href="https://empowerbot-saas.onrender.com/index.html" target="_blank">
-        <img src="images/DSC04054.jpg" alt="EmpowerBot AI WhatsApp" loading="lazy"/>
+      <a class="prog-card rv" href="about.html">
+        <img src="images/image2.jpg" alt="EmpowerBot AI WhatsApp" loading="lazy"/>
         <div class="prog-ov"></div>
         <div class="prog-body">
           <span class="prog-tag">Technology · Nigeria-wide</span>
           <h3>EmpowerBot — AI on WhatsApp</h3>
           <p>Free AI coaching, quizzes, and financial literacy delivered directly to entrepreneurs on their phones. No app download required.</p>
-          <span class="prog-link">Try it free →</span>
-        </div>
-      </a>
-      <!-- 5. Market Outreach -->
-      <a class="prog-card rv" href="market-outreach.html">
-        <img src="images/IMG-20221220-WA0023.jpg" alt="Market Outreach Lagos" loading="lazy"/>
-        <div class="prog-ov"></div>
-        <div class="prog-body">
-          <span class="prog-tag">Community · Lagos Markets</span>
-          <h3>Market Outreach</h3>
-          <p>We go to the market. Surveys, field training, and community engagement across 100+ markets and 15 LGAs in Lagos since 2019.</p>
-          <span class="prog-link">Read more →</span>
-        </div>
-      </a>
-      <!-- 6. Local Business School -->
-      <a class="prog-card rv" href="local-business-school.html">
-        <img src="images/DSC_0154.JPG" alt="Local Business School" loading="lazy"/>
-        <div class="prog-ov"></div>
-        <div class="prog-body">
-          <span class="prog-tag">Training · Free · Nigeria-wide</span>
-          <h3>Local Business School</h3>
-          <p>LSETF bootcamps, EmpowerBot coaching, and the free 98-page SME Digest — all built from what small business owners told us they actually need.</p>
           <span class="prog-link">Read more →</span>
         </div>
       </a>
 
-    </div>
-  </div>
-</section>
-
-<!-- ════ BLOG FEATURED ════════════════════════ -->
-<section style="background:var(--cream);padding:clamp(72px,9vw,110px) 0">
-  <div class="wrap">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:14px" class="rv">
-      <div>
-        <p style="font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e75b1e;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1.5px;background:#e75b1e;display:inline-block"></span>Stories from the field</p>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--ink)">We document everything.<br>Read why it matters.</h2>
-      </div>
-      <a href="blog.html" style="font-size:.88rem;font-weight:600;color:var(--muted)" onmouseover="this.style.color='#e75b1e'" onmouseout="this.style.color='var(--muted)'">All six posts &#8594;</a>
-    </div>
-
-    <!-- Row 1: featured large card + 2 small -->
-    <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:20px;margin-bottom:20px">
-
-      <a href="blog-7.html" class="rv" style="display:flex;flex-direction:column;background:var(--ink);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .35s;position:relative" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <span style="position:absolute;top:14px;left:14px;z-index:2;background:#e75b1e;color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px">Apr 30, 2026</span>
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/agege-bootcamp-2026-1.jpg" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.75;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
-        <div style="padding:24px;flex:1;display:flex;flex-direction:column;gap:10px">
-          <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">LSETF Programme &middot; April 30, 2026</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;line-height:1.25">Our hardest bootcamp yet — 100+ entrepreneurs graduated in Agege today</p>
-          <span style="font-size:.8rem;font-weight:600;color:#e75b1e;margin-top:auto">Read the full story &#8594;</span>
-        </div>
-      </a>
-
-      <a href="blog-5.html" class="rv" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);text-decoration:none;transition:transform .35s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="images/IMG-20221220-WA0015.jpg" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">Research</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.25">We visited 100 markets before we taught anyone anything. Here's why.</p>
-          <span style="font-size:.78rem;font-weight:600;color:#e75b1e;margin-top:auto">See what we found &#8594;</span>
-        </div>
-      </a>
-
-      <a href="blog-3.html" class="rv" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);text-decoration:none;transition:transform .35s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="images/DSC04162.jpg" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">LSETF Programme</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.25">We tested 250 entrepreneurs before and after training. The results surprised us.</p>
-          <span style="font-size:.78rem;font-weight:600;color:#e75b1e;margin-top:auto">See the results &#8594;</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Row 2: 3 equal cards -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-      <a href="blog-8.html" class="rv" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);text-decoration:none;transition:transform .35s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="images/DSC04054.jpg" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">Research &middot; Medium</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.25">Are small businesses actually using tech? What 1,500 firms told us.</p>
-          <span style="font-size:.78rem;font-weight:600;color:#e75b1e;margin-top:auto">Read the research &#8594;</span>
-        </div>
-      </a>
-      <a href="blog-4.html" class="rv" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);text-decoration:none;transition:transform .35s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="images/DSC_0154.JPG" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">Local Business School</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.25">Why we wrote a 98-page handbook for small businesses and then gave it away for free</p>
-          <span style="font-size:.78rem;font-weight:600;color:#e75b1e;margin-top:auto">Read the story &#8594;</span>
-        </div>
-      </a>
-      <a href="blog-6.html" class="rv" style="display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);text-decoration:none;transition:transform .35s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="images/DSC04054.jpg" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/></div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#e75b1e">Events</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.25">The day we asked 50 entrepreneurs whether tech is a promise or a burden</p>
-          <span style="font-size:.78rem;font-weight:600;color:#e75b1e;margin-top:auto">Read what happened &#8594;</span>
-        </div>
-      </a>
     </div>
   </div>
 </section>
@@ -771,137 +519,6 @@ footer{background:#080503;padding:clamp(52px,7vw,88px) 0 28px}
       Small things, <em>brought together</em>,<br>become the most powerful force<br>in any economy.
     </blockquote>
     <p class="belief-from">Empowerment for Local People Foundation · Est. 2017</p>
-  </div>
-</section>
-
-
-<!-- ════ EMPOWERBOT ═══════════════════════════ -->
-<section style="background:var(--ink);padding:clamp(80px,9vw,120px) 0">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
-      <div class="rv">
-        <p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:14px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1.5px;background:var(--o);display:inline-block"></span>Free on WhatsApp</p>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px">EmpowerBot &mdash;<br><em style="font-style:italic;color:var(--o)">AI in your pocket.</em></h2>
-        <p style="font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:20px">EmpowerBot is our free AI-powered WhatsApp tool for small business owners. No app to download. No data plan needed beyond WhatsApp.</p>
-        <p style="font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:32px">It delivers personalised business coaching, financial literacy quizzes, recordkeeping guidance, and pricing help — in plain language, on demand, in your chat.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="https://empowerbot-saas.onrender.com/index.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:var(--o);color:#fff;border-radius:100px;font-size:.88rem;font-weight:700;padding:13px 28px">Try EmpowerBot &rarr;</a>
-          <a href="about.html" style="display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.65);border-radius:100px;font-size:.88rem;font-weight:600;padding:13px 28px">Learn more</a>
-        </div>
-      </div>
-      <div class="rv">
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:36px">
-          <div style="display:flex;flex-direction:column;gap:14px">
-            <div style="background:rgba(255,255,255,.07);border-radius:12px 12px 12px 4px;padding:16px 20px;max-width:80%">
-              <p style="font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6">Hi! I want to understand my profit better. I sell provisions.</p>
-            </div>
-            <div style="background:rgba(231,91,30,.15);border:1px solid rgba(231,91,30,.3);border-radius:12px 12px 4px 12px;padding:16px 20px;max-width:80%;align-self:flex-end">
-              <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.6"><strong style="color:var(--o)">EmpowerBot:</strong> Great! Profit = what you sold &minus; what you paid. If you bought garri for &#8358;2,000 and sold it for &#8358;2,600, your profit is &#8358;600. Want me to help you track this daily?</p>
-            </div>
-            <div style="background:rgba(255,255,255,.07);border-radius:12px 12px 12px 4px;padding:16px 20px;max-width:80%">
-              <p style="font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6">Yes please! How do I start?</p>
-            </div>
-            <div style="background:rgba(231,91,30,.15);border:1px solid rgba(231,91,30,.3);border-radius:12px 12px 4px 12px;padding:16px 20px;max-width:80%;align-self:flex-end">
-              <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.6"><strong style="color:var(--o)">EmpowerBot:</strong> Every morning, write: what you bought and the cost. Every evening, write: what you sold and for how much. I will help you calculate the rest. Ready?</p>
-            </div>
-          </div>
-          <p style="font-size:.7rem;color:rgba(255,255,255,.25);text-align:center;margin-top:20px;letter-spacing:.08em;text-transform:uppercase">Free on WhatsApp &middot; No download needed</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════ OUR APPROACH ════════════════════════ -->
-<section style="background:var(--stone);padding:clamp(80px,9vw,120px) 0">
-  <div class="wrap">
-    <div class="rv" style="text-align:center;max-width:680px;margin:0 auto 60px">
-      <p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:10px"><span style="width:20px;height:1.5px;background:var(--o);display:inline-block"></span>How we work</p>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;letter-spacing:-.02em;line-height:1;margin-bottom:16px">Evidence before everything.</h2>
-      <p style="font-size:.95rem;color:var(--muted);line-height:1.8">We survey before we train. We measure before we claim. We stay after everyone else has left.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-      <div class="rv" style="background:#fff;border-radius:12px;padding:32px 24px;border:1px solid rgba(0,0,0,.07);transition:transform .35s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-        <div style="width:44px;height:44px;border-radius:10px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--o);margin-bottom:18px">01</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:10px">Survey first</h3>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.75">We visit communities and markets before writing a single training module. 2,000+ firms surveyed across Lagos.</p>
-      </div>
-      <div class="rv" style="background:#fff;border-radius:12px;padding:32px 24px;border:1px solid rgba(0,0,0,.07);transition:transform .35s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-        <div style="width:44px;height:44px;border-radius:10px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--o);margin-bottom:18px">02</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:10px">Design with data</h3>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.75">Every training session, tool, and handbook is built from what our data shows entrepreneurs actually need.</p>
-      </div>
-      <div class="rv" style="background:#fff;border-radius:12px;padding:32px 24px;border:1px solid rgba(0,0,0,.07);transition:transform .35s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-        <div style="width:44px;height:44px;border-radius:10px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--o);margin-bottom:18px">03</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:10px">Measure learning</h3>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.75">We test participants before and after every programme. We track behaviour change months later, not just attendance.</p>
-      </div>
-      <div class="rv" style="background:#fff;border-radius:12px;padding:32px 24px;border:1px solid rgba(0,0,0,.07);transition:transform .35s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-        <div style="width:44px;height:44px;border-radius:10px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--o);margin-bottom:18px">04</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:10px">Stay in the field</h3>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.75">Monthly farm visits. In-person coaching. EmpowerBot on WhatsApp. We don't train and disappear.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════ DOWNLOADS ════════════════════════════ -->
-<section style="background:var(--stone);padding:clamp(72px,9vw,110px) 0">
-  <div class="wrap">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:20px" class="rv">
-      <div>
-        <p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:14px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1.5px;background:var(--o);display:inline-block"></span>Free to download</p>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.02em;line-height:1">Research &amp; resources</h2>
-      </div>
-      <a href="downloads.html" style="font-size:.85rem;font-weight:600;color:var(--muted)" onmouseover="this.style.color='var(--o)'" onmouseout="this.style.color='var(--muted)'">See all downloads &rarr;</a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <a href="downloads/ELP SME DIgest Handout (1).pdf" download class="rv" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:28px;display:flex;gap:16px;align-items:flex-start;transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--o);flex-shrink:0">PDF</div>
-        <div><p style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);margin-bottom:6px">Research &middot; Free</p><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;line-height:1.2">ELP SME Digest Handout</h3><p style="font-size:.78rem;color:var(--muted)">Download &darr;</p></div>
-      </a>
-      <a href="downloads/Oyebanjo_Abiola_E_bookkeeping_WorkingPaper_25012024-__3_.pdf" download class="rv" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:28px;display:flex;gap:16px;align-items:flex-start;transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--o);flex-shrink:0">PDF</div>
-        <div><p style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);margin-bottom:6px">Working Paper</p><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;line-height:1.2">Beyond Information: Micro-consulting &amp; Digital Adoption</h3><p style="font-size:.78rem;color:var(--muted)">Download &darr;</p></div>
-      </a>
-      <a href="downloads/empowerFarmers_Brochure_Final__4_.pdf" download class="rv" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:28px;display:flex;gap:16px;align-items:flex-start;transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(231,91,30,.1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--o);flex-shrink:0">PDF</div>
-        <div><p style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);margin-bottom:6px">empowerFarmers</p><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;line-height:1.2">2026 Programme Brochure</h3><p style="font-size:.78rem;color:var(--muted)">Download &darr;</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-<!-- ════ TEAM PREVIEW ══════════════════════════ -->
-<section style="background:var(--cream);padding:clamp(80px,9vw,120px) 0">
-  <div class="wrap">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:20px" class="rv">
-      <div>
-        <p style="font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:14px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1.5px;background:var(--o);display:inline-block"></span>The people</p>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;letter-spacing:-.02em;line-height:1">Our team</h2>
-      </div>
-      <a href="team.html" style="font-size:.85rem;font-weight:600;color:var(--muted);transition:color .2s" onmouseover="this.style.color='var(--o)'" onmouseout="this.style.color='var(--muted)'">Meet everyone &rarr;</a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
-      <div class="rv" style="border-radius:12px;overflow:hidden;position:relative;min-height:360px">
-        <img src="images/DSC04353.jpg" alt="ELP team and community" style="width:100%;height:100%;object-fit:cover;object-position:center 20%"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(18,9,4,.88) 0%,rgba(18,9,4,.1) 60%,transparent 100%)"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;font-weight:300;color:#fff;line-height:1.4">Researchers, trainers, field officers, and community builders — united by one belief.</p>
-        </div>
-      </div>
-      <div class="rv" style="border-radius:12px;overflow:hidden;position:relative;min-height:360px">
-        <img src="images/DSC_0207.JPG" alt="ELP field research team 2022" style="width:100%;height:100%;object-fit:cover;object-position:center 25%"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(18,9,4,.88) 0%,rgba(18,9,4,.1) 60%,transparent 100%)"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px">
-          <p style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--o);margin-bottom:8px">Lagos Field Research Team</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;font-weight:300;color:#fff;line-height:1.4">The 2022 team that surveyed over 1,900 businesses across Lagos markets.</p>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:36px" class="rv">
-      <a href="team.html" style="display:inline-flex;align-items:center;gap:7px;background:var(--o);color:#fff;border-radius:100px;font-size:.88rem;font-weight:700;padding:13px 28px">Meet our full team &rarr;</a>
-    </div>
   </div>
 </section>
 
@@ -1128,8 +745,8 @@ hero.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
 
 /* ── Synced hero: one element, fade out → swap content → fade in ── */
 const STORIES = [
-  `For the farmer who planted<br>without <em>any collateral.</em>`,
   `For the trader who has never<br>had a system — <em>until now.</em>`,
+  `For the farmer who planted<br>without <em>any collateral.</em>`,
   `For the shop owner who tracks growth<br>in a notebook — <em>waiting to be counted.</em>`,
   `For the entrepreneur who found<br>her first customers <em>through a WhatsApp bot.</em>`,
 ];
@@ -1170,23 +787,6 @@ window.addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 60)
 document.getElementById('burger').addEventListener('click', () =>
   document.getElementById('mob').classList.toggle('open'));
 
-// Dropdown click toggle for touch devices
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.querySelector('.nav-top')?.addEventListener('click', function(e) {
-    const drop = item.querySelector('.nav-drop');
-    if (!drop) return;
-    // Only intercept if it's a dropdown (has children)
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) { item.classList.add('open'); e.preventDefault(); }
-  });
-});
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-item')) {
-    document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
-  }
-});
-
 /* ── Reveal on scroll ── */
 const ro = new IntersectionObserver(es => {
   es.forEach((e,i) => {
@@ -1197,26 +797,6 @@ const ro = new IntersectionObserver(es => {
   });
 }, { threshold:.08 });
 document.querySelectorAll('.rv').forEach(el => ro.observe(el));
-
-/* ── Relative time for Agege post ── */
-(function(){
-  var pub = new Date('2026-04-30T00:00:00');
-  var now = new Date();
-  var diff = Math.floor((now - pub) / 86400000);
-  var badge = document.getElementById('agege-badge');
-  var dateEl = document.getElementById('agege-date');
-  if(!badge) return;
-  var label;
-  if(diff === 0)       label = 'Today';
-  else if(diff === 1)  label = 'Yesterday';
-  else if(diff < 7)    label = diff + ' days ago';
-  else if(diff < 14)   label = '1 week ago';
-  else if(diff < 30)   label = Math.floor(diff/7) + ' weeks ago';
-  else if(diff < 60)   label = '1 month ago';
-  else                 label = Math.floor(diff/30) + ' months ago';
-  badge.textContent = label;
-  if(dateEl) dateEl.textContent = 'April 30, 2026 · ' + label;
-})();
 </script>
 </body>
 </html>
